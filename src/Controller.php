@@ -22,4 +22,9 @@ class Controller {
 
         include "Views/client/master.php";
     }
+    protected function renderLog($view, $data = []) {
+        extract($data);
+
+        include "Views/client/Log/$view.php";
+    }
 }
