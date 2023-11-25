@@ -6,7 +6,7 @@
                 <div class="page-header-title">
                     <i class="feather icon-home bg-c-blue"></i>
                     <div class="d-inline">
-                        <h5>Quản lý Danh mục</h5>
+                        <h5>Category</h5>
                     </div>
                 </div>
             </div>
@@ -14,9 +14,9 @@
                 <div class="page-header-breadcrumb">
                     <ul class=" breadcrumb breadcrumb-title">
                         <li class="breadcrumb-item">
-                            <a href="index.html"><i class="feather icon-home"></i></a>
+                            <a href="/admin/dashboard"><i class="feather icon-home"></i></a>
                         </li>
-                        <li class="breadcrumb-item"><a href="#!">Quản lý Danh mục</a> </li>
+                        <li class="breadcrumb-item"><a href="#!">Category</a> </li>
                     </ul>
                 </div>
             </div>
@@ -29,35 +29,49 @@
                 <div class="page-body">
 
                     <div class="row">
+                        <div class="col-sm-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5>Danh sách Category</h5>
 
-                        <table class="table">
-                            <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>Action</th>
-                            </tr>
+                                    <a href="/admin/categories/create" class="btn btn-info btn-sm">Tạo mới</a>
+                                </div>
+                                <div class="card-block">
+                                    <div class="dt-responsive table-responsive">
+                                        <table id="simpletable" class="table table-striped table-bordered nowrap">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Name</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
 
-                            <?php foreach ($categories as $category) : ?>
-                                <tr>
-                                    <td><?= $category['id'] ?></td>
-                                    <td><?= $category['name'] ?></td>
-                                    <td>
-                                        <a href="/admin/categories/update?id=<?= $category['id'] ?>" class="btn btn-primary btn-sm">Cập nhật</a>
+                                            <tbody>
+                                                <?php foreach ($categories as $category) : ?>
+                                                    <tr>
+                                                        <td><?= $category['id'] ?></td>
+                                                        <td><?= $category['name'] ?></td>
+                                                        <td>
+                                                            <a href="/admin/categories/update?id=<?= $category['id'] ?>" class="btn btn-primary btn-sm">Cập nhật</a>
 
-                                        <form action="/admin/categories/delete?id=<?= $category['id'] ?>" method="post">
-                                            <button type="submit" onclick="return confirm('Bạn có chắc chắn xóa?');" class="btn btn-danger btn-sm">Xóa</button>
-                                        </form>
-                                    </td>
-                                </tr>
-                            <?php endforeach; ?>
+                                                            <form action="/admin/categories/delete?id=<?= $category['id'] ?>" method="post">
+                                                                <button type="submit" onclick="return confirm('Bạn có chắc chắn xóa?');" class="btn btn-danger btn-sm">Xóa</button>
+                                                            </form>
+                                                        </td>
+                                                    </tr>
+                                                <?php endforeach; ?>
+                                            </tbody>
 
-                        </table>
-                        <a href="/admin/categories/create"><button class="btn btn-primary">Thêm danh mục</button> </a>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
             </div>
         </div>
     </div>
-</div>
 </div>
