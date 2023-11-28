@@ -23,7 +23,7 @@ class DetailProductController extends Controller
         foreach ($categories as $category) {
             $arrayCategoryIdName[$category['id']] = $category['name'];
         }
-        $productId = 20; 
+        $productId = $_GET['id']; 
         $detailProduct = (new Product())->detailProduct($productId);
 
         $this->renderClient(

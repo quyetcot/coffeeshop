@@ -14,6 +14,7 @@
                     <a href="/about" class="nav-item nav-link">Về chúng tôi</a>
                     <a href="/service" class="nav-item nav-link">Dịch vụ</a>
                     <a href="/contact" class="nav-item nav-link">Liên hệ</a>
+                    <a href="" class="nav-item nav-link">Giỏ hàng</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tài khoản</a>
                         <div class="dropdown-menu text-capitalize">
