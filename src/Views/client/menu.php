@@ -22,7 +22,7 @@
         <div class="row">
             <?php foreach ($products as $product) : ?>
                 <div class="col-lg-6">
-                    <a href="/detail_product" class="btn btn_primary">
+                    <a href="/detail_product?id=<?= $product['id'] ?>" class="btn btn_primary">
                     <div class="row align-items-center mb-5">
                         <div class="col-4 col-sm-3">
                             <img class="w-100 rounded-circle mb-3 mb-sm-0" src="<?= $product['img'] ?>" alt="">
