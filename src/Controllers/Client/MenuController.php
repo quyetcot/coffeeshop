@@ -30,7 +30,8 @@ class MenuController extends Controller
                 'products' => $products,
                 "arrayCategoryIdName" => $arrayCategoryIdName,
                 'getAllByCategoryID' => $getAllByCategoryID,
-                'getLatestLimit10' => $getLatestLimit10
+                'getLatestLimit10' => $getLatestLimit10,
+                'categories'=>$categories
                 
             ]);
         }
