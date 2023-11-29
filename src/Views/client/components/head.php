@@ -3,3 +3,4 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="assets_client/css/style.min.css" rel="stylesheet">
+    <link href="assets_client/css/stylemenu.css" rel="stylesheet">
