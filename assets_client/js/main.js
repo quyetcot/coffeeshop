@@ -1,3 +1,23 @@
+document.addEventListener('DOMContentLoaded', function () {
+    // Lắng nghe sự kiện click trên các anchor link
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            // Lấy target element dựa trên href
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+
+            // Cuộn trang đến vị trí của target element
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 50, // Có thể điều chỉnh offset tùy thuộc vào cách thiết kế của bạn
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+});
 (function ($) {
     "use strict";
     
