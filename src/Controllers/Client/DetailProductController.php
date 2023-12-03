@@ -6,6 +6,7 @@ use Ductong\BaseMvc\Controller;
 use Ductong\BaseMvc\Models\Category;
 use Ductong\BaseMvc\Models\Comment;
 use Ductong\BaseMvc\Models\Product;
+use Ductong\BaseMvc\Models\User;
 
 
 class DetailProductController extends Controller
@@ -17,6 +18,7 @@ class DetailProductController extends Controller
         $products = (new Product())->all();
         $categories = (new Category())->all();
         $comments = (new Comment())->all();
+        $users = (new User())->all();
 
 
         // Mảng này có cấu trúc, key là id danh mục, value là tên danh mục
@@ -35,7 +37,8 @@ class DetailProductController extends Controller
                 "comments"=> $comments,
                 "arrayCategoryIdName" => $arrayCategoryIdName,
                 "detailProduct" => $detailProduct,
-                'categories'=>$categories
+                'categories'=>$categories,
+                'users'=>$users 
             ]
         );
     }
