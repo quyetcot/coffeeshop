@@ -46,6 +46,17 @@
                                         </a>
                                     </li>
                                 </ul>
+                                <!--Bình luận -->
+                                <ul class="pcoded-item pcoded-left-item">
+                                    <li class>
+                                        <a href="/admin/comments" class="waves-effect waves-dark">
+                                            <span class="pcoded-micon">
+                                                <i class="feather icon-home"></i>
+                                            </span>
+                                            <span class="pcoded-mtext">Quản lý Bình Luận</span>
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </nav>

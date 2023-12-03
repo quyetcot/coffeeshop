@@ -39,4 +39,14 @@
 
       </div>
   </div>
+  
+    <div>
+        <h3> Sản phẩm cùng loại</h3>
+        <?php foreach ($products as $product): ?>
+                <a href=" /detail_product?id=<?= $product['id']?>">
+                    <?= $product['name'] ?>
+                </a>
+        <?php endforeach; ?>
+        </div>
+    </div>
   <!-- Reservation End -->

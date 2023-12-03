@@ -32,6 +32,7 @@ class DetailProductController extends Controller
                 "products" => $products,
                 "arrayCategoryIdName" => $arrayCategoryIdName,
                 "detailProduct" => $detailProduct,
+                'categories'=>$categories
             ]
         );
     }

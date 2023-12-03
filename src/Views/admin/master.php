@@ -30,7 +30,7 @@
                   <!-- Chỗ này để content của Page -->
                 <?php require_once $view.'.php'; ?>
 
-                    <div id="styleSelector">
+                    <div id="styleSelector"> 
                     </div>
 
                 </div>

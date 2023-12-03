@@ -56,7 +56,8 @@
                                         <?= $product['name'] ?>
                                     </h4>
                                     <p class="m-0">
-                                        <?= $product['description'] ?>
+                                        <?= $product['price'] ?>$
+                                        
                                     </p>
                                 </div>
                             </div>
