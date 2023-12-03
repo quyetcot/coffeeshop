@@ -42,10 +42,10 @@
                                             <thead>
                                                 <tr>
                                                     <th>ID</th>
-                                                    <th>ID_Users </th>
-                                                    <th>ID_Product</th>
-                                                    <th>Content</th>
-                                                    <th>Date</th>
+                                                    <th>Người bình luận </th>
+                                                    <th>Sản phẩm</th>
+                                                    <th>Nội dung</th>
+                                                    <th>Ngày bình luận</th>
                                                     <th></th>
                                                     
                                                 </tr>
@@ -55,8 +55,19 @@
                                             <?php foreach ($comments as $comment) : ?>
                                                 <tr>
                                                     <td><?= $comment['id'] ?></td>
-                                                    <td><?= $comment['id_user'] ?></td>
-                                                    <td><?= $comment['id_product'] ?></td>
+                                                    <td> <?php foreach ($users as $user) : ?>
+                                                        <?php if($comment['id_user']==$user['id']):  ?>
+                                                        <?=$user['name'] ?>
+                                                        <?php endif; ?>
+                                                        <?php endforeach; ?>
+                                                    </td>
+                                                    <td>
+                                                        <?php foreach ($products as $product) : ?>
+                                                            <?php if($product['id']==$comment['id_product']): ?>
+                                                                <?=$product['name'] ?>
+                                                                <?php endif ?>
+                                                        <?php endforeach;?>
+                                                    </td>
                                                     <td><?= $comment['content'] ?></td>
                                                     <td><?= $comment['date'] ?></td>
                                                     <td>

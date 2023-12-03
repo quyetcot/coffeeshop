@@ -36,27 +36,31 @@
                                 </div>
                                 <div class="card-block">
                                     <form action="" method="post">
-                                        <label for="name">ID_Users</label>
-                                        <select name="products" id="products" class="form-control">
+                                        <label for="id_user">Người dùng</label>
+                                        <select name="id_user" id="id_user" class="form-control">
                                             <?php foreach ($users as $user) : ?>
                                                 <option value="<?= $user['id'] ?>"><?= $user['name'] ?></option>
                                             <?php endforeach; ?>
-                                            </select>
-                                        <label for="products">Sản Phẩm</label>
-                                        <select name="products" id="products" class="form-control">
+                                        </select>
+
+                                        <label for="id_product">Sản Phẩm</label>
+                                        <select name="id_product" id="id_product" class="form-control">
                                             <?php foreach ($products as $product) : ?>
                                                 <option value="<?= $product['id'] ?>"><?= $product['name'] ?></option>
                                             <?php endforeach; ?>
                                         </select>
-                                        <label for="name">Bình luận</label>
+
+                                        <label for="content">Bình luận</label>
                                         <input type="text" name="content" class="form-control">
-                                        <label for="name">Date</label>
+
+                                        <label for="date">Ngày</label>
                                         <input type="date" name="date" class="form-control">
 
                                         <button type="submit" name="btn-submit" class="btn btn-info mt-3">Submit</button>
-                                        <a href="/admin/comments" class="btn btn-primary mt-3">Quay lại d/s</a>
+                                        <a href="/admin/comments" class="btn btn-primary mt-3">Quay lại danh sách</a>
                                     </form>
                                 </div>
+
                             </div>
                         </div>
                     </div>

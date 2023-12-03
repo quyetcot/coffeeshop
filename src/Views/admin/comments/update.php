@@ -12,7 +12,7 @@
             </div>
             <div class="col-lg-4">
                 <div class="page-header-breadcrumb">
-                    <ul class=" breadcrumb breadcrumb-title">
+                    <ul class="breadcrumb breadcrumb-title">
                         <li class="breadcrumb-item">
                             <a href="/admin/dashboard"><i class="feather icon-home"></i></a>
                         </li>
@@ -38,36 +38,38 @@
                                     <form action="" method="post" enctype="multipart/form-data">
                                         <input type="hidden" name="id" value="<?= $comments['id'] ?>">
 
-                                        <label for="name">Người bình luận</label>
-                                        <select name="category_id" id="category_id" class="form-control">
-                                            <?php foreach ($users as $user) : ?>
-                                                <option 
-                                                    <?= $comments['id_user'] == $user['id'] ? 'selected' : '' ?> 
-                                                    value="<?= $user['id'] ?>">
-                                                    
-                                                    <?= $user['name'] ?>
+                                        <div class="form-group">
+                                            <label for="id_user">Người bình luận</label>
+                                            <select name="id_user" id="id_user" class="form-control">
+                                                <?php foreach ($users as $user) : ?>
+                                                    <option <?= $comments['id_user'] == $user['id'] ? 'selected' : '' ?> value="<?= $user['id'] ?>">
+                                                        <?= $user['name'] ?>
+                                                    </option>
+                                                <?php endforeach; ?>
+                                            </select>
+                                        </div>
 
-                                                </option>
-                                            <?php endforeach; ?>
-                                        </select>
-                                        
-                                        <label for="category_id">Sản phẩm</label>
-                                        <select name="category_id" id="category_id" class="form-control">
-                                            <?php foreach ($products as $product) : ?>
-                                                <option 
-                                                    <?= $comments['id_product'] == $product['id'] ? 'selected' : '' ?> 
-                                                    value="<?= $product['id'] ?>">
-                                                    
-                                                    <?= $product['name'] ?>
+                                        <div class="form-group">
+                                            <label for="id_product">Sản phẩm</label>
+                                            <select name="id_product" id="id_product" class="form-control">
+                                                <?php foreach ($products as $product) : ?>
+                                                    <option <?= $comments['id_product'] == $product['id'] ? 'selected' : '' ?> value="<?= $product['id'] ?>">
+                                                        <?= $product['name'] ?>
+                                                    </option>
+                                                <?php endforeach; ?>
+                                            </select>
+                                        </div>
 
-                                                </option>
-                                            <?php endforeach; ?>
-                                        </select>
+                                        <div class="form-group">
+                                            <label for="content">Nội dung</label>
+                                            <input type="text" name="content" id="content" class="form-control" value="<?= $comments['content'] ?>">
+                                        </div>
 
-                                        <label for="img">Nội dung</label>
-                                        <input type="text" name="content" id="content" class="form-control" value="<?= $comments['content']?>">
-                                        <label for="price">Thời gian</label>
-                                        <input type="date" name="date" id="date" class="form-control" value="<?= $comments['date'] ?>">
+                                        <div class="form-group">
+                                            <label for="date">Thời gian</label>
+                                            <input type="date" name="date" id="date" class="form-control" value="<?= $comments['date'] ?>">
+                                        </div>
+
                                         <button type="submit" name="btn-submit" class="btn btn-info mt-3">Submit</button>
                                         <a href="/admin/comments" class="btn btn-primary mt-3">Quay lại d/s</a>
                                     </form>
@@ -76,7 +78,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

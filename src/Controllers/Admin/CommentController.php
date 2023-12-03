@@ -13,7 +13,9 @@ class CommentController extends Controller {
     
     public function index() {
         $comments = (new Comment())->all(); 
-        $this->renderAdmin('comments/index', ['comments' => $comments]);
+        $products = (new Product())->all();
+        $users = (new User())->all();
+        $this->renderAdmin('comments/index', ['comments' => $comments,'products'=> $products,'users'=> $users]);
         
     }
     public function create() {
@@ -35,7 +37,6 @@ class CommentController extends Controller {
 
             header('Location: /admin/comments');
         }
-
         $this->renderAdmin("comments/create", 
         ["products"=> $products ,"users"=> $users, "arrayUserIdName" => $arrayUserIdName,]);
     }
@@ -74,4 +75,5 @@ class CommentController extends Controller {
 
         header('Location: /admin/comments');
     }
+
 }

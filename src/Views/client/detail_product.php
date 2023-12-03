@@ -37,16 +37,36 @@
               </div>
           </div>
 
-      </div>
-  </div>
-  
-    <div>
+          
+          <div>
         <h3> Sản phẩm cùng loại</h3>
         <?php foreach ($products as $product): ?>
                 <a href=" /detail_product?id=<?= $product['id']?>">
-                    <?= $product['name'] ?>
+                    <br> <?= $product['name'] ?>
                 </a>
         <?php endforeach; ?>
         </div>
     </div>
+    <div>
+   
+<h2>Bình luận</h2>
+<?php if (!empty($comments)) : ?>
+    <ul>
+        <?php foreach ($comments as $comment) : ?>
+            <li>
+                <strong><?= $comment['id_user'] ?>:</strong>
+                <?= $comment['content'] ?>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+<?php else : ?>
+    <p>Chưa có bình luận nào.</p>
+<?php endif; ?>
+
+
+    </div>
+      </div>
+  </div>
+  
+    
   <!-- Reservation End -->

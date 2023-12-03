@@ -36,4 +36,19 @@ class Comment extends Model {
 
     return $stmt->fetch();
 }
+public function load_binhluan($id_product){
+    $sql="  SELECT c.content,c.date,u.name  FROM comments c 
+    JOIN users ON u.id=c.id_user
+    JOIN products pro ON c.id_product=pro.id where 
+    pro.id=1";
+    $stmt = $this->conn->prepare($sql);
+
+    $stmt->bindParam(':id', $id_product);
+
+    $stmt->execute();
+
+    $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+
+    return $stmt->fetch();
+} 
 }
