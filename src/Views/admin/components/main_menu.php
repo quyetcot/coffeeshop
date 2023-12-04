@@ -46,7 +46,7 @@
                                         </a>
                                     </li>
                                 </ul>
-<<<<<<< HEAD
+
                                 <!--Bình luận -->
                                 <ul class="pcoded-item pcoded-left-item">
                                     <li class>
@@ -55,7 +55,7 @@
                                                 <i class="feather icon-home"></i>
                                             </span>
                                             <span class="pcoded-mtext">Quản lý Bình Luận</span>
-=======
+
                                 <ul class="pcoded-item pcoded-left-item">
                                     <li class>
                                         <a href="/admin/bills" class="waves-effect waves-dark">
@@ -63,7 +63,6 @@
                                                 <i class="feather icon-home"></i>
                                             </span>
                                             <span class="pcoded-mtext">Quản lý Đơn hàng</span>
->>>>>>> c1e4878a1379c6e36c08ccc4fee7a4d2bc763b14
                                         </a>
                                     </li>
                                 </ul>

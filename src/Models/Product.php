@@ -38,6 +38,7 @@ class Product extends Model {
                 p.price p_price,
                 p.price_sale p_price_sale,
                 p.img p_img,
+                p.description p_description,
                 c.id c_id,
                 c.name c_name
             FROM products p 
