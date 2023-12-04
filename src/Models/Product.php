@@ -34,6 +34,7 @@ class Product extends Model {
     // Lấy ra 10 sản phẩm mới nhất, được order by theo ID sản phẩm
     public function getLatestLimit10() {
         $sql = "SELECT 
+             p.id p_id,
                 p.name p_name,
                 p.price p_price,
                 p.price_sale p_price_sale,
