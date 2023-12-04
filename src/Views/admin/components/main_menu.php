@@ -46,6 +46,16 @@
                                         </a>
                                     </li>
                                 </ul>
+                                <ul class="pcoded-item pcoded-left-item">
+                                    <li class>
+                                        <a href="/admin/bills" class="waves-effect waves-dark">
+                                            <span class="pcoded-micon">
+                                                <i class="feather icon-home"></i>
+                                            </span>
+                                            <span class="pcoded-mtext">Quản lý Đơn hàng</span>
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </nav>
