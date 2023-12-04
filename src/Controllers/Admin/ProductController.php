@@ -113,6 +113,7 @@ class ProductController extends Controller {
 
         $categories = (new Category())->all();
         $product = (new Product())->findOne($_GET["id"]);
+     
 
         $this->renderAdmin("products/update", ["product" => $product, 'categories' => $categories]);
     }

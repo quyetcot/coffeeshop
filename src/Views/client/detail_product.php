@@ -11,6 +11,19 @@
 </div>
 <!-- Page Header End -->
 
+<!-- Page Header Start -->
+<div class="container-fluid page-header mb-5 position-relative overlay-bottom">
+    <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 200px">
+        <h1 class="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase">Detail Product</h1>
+        <div class="d-inline-flex mb-lg-5">
+            <p class="m-0 text-white"><a class="text-white" href="">Home</a></p>
+            <p class="m-0 text-white px-2">/</p>
+            <p class="m-0 text-white">Reservation</p>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+
 
 <!-- Reservation Start -->
 <div class="container-fluid py-5">
@@ -42,34 +55,78 @@
                 </div>
             </div>
         </div>
-        <div>
-            <h3> Sản phẩm cùng loại</h3>
-            <?php foreach ($products as $product): ?>
-                <a href=" /detail_product?id=<?= $product['id'] ?>">
-                    <br>
-                    <?= $product['name'] ?>
-                </a>
-            <?php endforeach; ?>
-        </div>
-        <div>
-        <h2>Bình luận</h2>
-        <?php foreach ($comments as $comment): ?>
-            <div class="usercm">
-                <?php foreach ($users as $user): ?>
-                    <?php if ($comment['id_user'] == $user['id']): ?>
-                        <?= $user['name'] ?>
+        <?php $isCategoryDisplayed = false; ?>
+
+        <?php foreach ($products as $product) : ?>
+            <?php if ($product['category_id'] == $detailProduct['category_id'] && $product['id'] != $detailProduct['id']) : ?>
+
+                <?php if (!$isCategoryDisplayed) : ?>
+                    <div>
+                        <h3> Sản phẩm cùng loại</h3>
+                        <?php $isCategoryDisplayed = true; ?>
                     <?php endif; ?>
-                <?php endforeach; ?>
-            </div>
-            <div class="cm">
-                <?= $comment['content'] ?>
-            </div>
+
+                    <a href="/chi-tiet-product?id=<?= $product['id'] ?>">
+                        <br>
+                        <?= $product['name'] ?>
+                    </a>
+
+                <?php endif; ?>
+            <?php endforeach; ?>
+
+            <?php if ($isCategoryDisplayed) : ?>
+                    </div>
+                <?php endif; ?>
+
+                <div>
+    <h2>Bình luận</h2>
+    <?php foreach ($comments as $comment) : ?>
+        <?php foreach ($users as $user) : ?>
+            <?php if ($comment['id_user'] == $user['id'] && $comment['id_product'] == $detailProduct['id']) : ?>
+                <div class="usercm">
+                    <?= $user['name'] ?>
+                </div>
+                <div class="cm">
+                    <?= $comment['content'] ?>
+                </div>
+            <?php endif; ?>
         <?php endforeach; ?>
+    <?php endforeach; ?>
+</div>
+
+
     </div>
-    </div>
-    
+
 </div>
 </div>
+
 
 
 <!-- Reservation End -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+    let totalProduct = document.getElementById('totalProduct');
+
+    function addToCart(productId, productName, productPrice, productImg) {
+        // console.log(productId, productName, productPrice);
+        // Sử dụng jQuery
+        $.ajax({
+            type: 'POST',
+            // Đường dẫ tới tệp PHP xử lý dữ liệu
+            url: './src/Views/client/addToCart.php',
+            data: {
+                id: productId,
+                name: productName,
+                price: productPrice,
+                img: productImg
+            },
+            success: function(response) {
+                totalProduct.innerText = response;
+                alert('Bạn đã thêm sản phẩm vào giỏ hàng thành công!')
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+    }
+</script>

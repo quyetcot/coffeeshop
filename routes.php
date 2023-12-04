@@ -7,16 +7,20 @@ use Ductong\BaseMvc\Controllers\Admin\ProductController;
 use Ductong\BaseMvc\Controllers\Admin\CommentController;
 use Ductong\BaseMvc\Controllers\Client\DetailProductController;
 use Ductong\BaseMvc\Controllers\Client\AboutController;
+use Ductong\BaseMvc\Controllers\Client\CartController;
 use Ductong\BaseMvc\Controllers\Client\ContactController;
 use Ductong\BaseMvc\Controllers\Client\HomeController;
+use Ductong\BaseMvc\Controllers\Client\LoginController;
 use Ductong\BaseMvc\Controllers\Client\MenuController;
+use Ductong\BaseMvc\Controllers\Client\PayController;
+use Ductong\BaseMvc\Controllers\Client\RegisterController;
 use Ductong\BaseMvc\Controllers\Client\ServiceController;
-use Ductong\BaseMvc\Controllers\Client\SignUpController;
+use Ductong\BaseMvc\Controllers\IndexController;
 use Ductong\BaseMvc\Router;
 
 $router = new Router();
 
-$router->addRoute('/', HomeController::class, 'index');
+$router->addRoute('/', IndexController::class, 'index');
 
 $router->addRoute('/admin/comments', CommentController::class, 'index');
 $router->addRoute('/admin/comments/create', CommentController::class, 'create');
@@ -24,15 +28,19 @@ $router->addRoute('/admin/comments/update', CommentController::class, 'update');
 $router->addRoute('/admin/comments/delete', CommentController::class, 'delete');
 
 $router->addRoute('/detail_product', DetailProductController::class, 'index');
-$router->addRoute('/signup', SignUpController::class, 'indexsign');
-$router->addRoute('/login', SignUpController::class, 'indexlog');
 $router->addRoute('/menu', MenuController::class, 'index');
 $router->addRoute('/about', AboutController::class, 'index');
+$router->addRoute('/home', HomeController::class, 'index');
+$router->addRoute('/login', LoginController::class, 'index');
+$router->addRoute('/register', RegisterController::class, 'create');
+$router->addRoute('/cart', CartController::class, 'index');
+
+$router->addRoute('/pay', PayController::class, 'create');
 $router->addRoute('/service', ServiceController::class, 'index');
 $router->addRoute('/contact', ContactController::class, 'index');
 
 $router->addRoute('/admin/dashboard', DashboardController::class, 'index');
-
+$router->addRoute('/admin/bills', PayController::class, 'index');
 $router->addRoute('/admin/users', UserController::class, 'index');
 $router->addRoute('/admin/users/create', UserController::class, 'create');
 $router->addRoute('/admin/users/update', UserController::class, 'update');
