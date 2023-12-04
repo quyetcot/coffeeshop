@@ -15,6 +15,7 @@ use Ductong\BaseMvc\Controllers\Client\PayController;
 use Ductong\BaseMvc\Controllers\Client\RegisterController;
 use Ductong\BaseMvc\Controllers\Client\ServiceController;
 use Ductong\BaseMvc\Controllers\IndexController;
+use Ductong\BaseMvc\Controllers\LogoutController;
 use Ductong\BaseMvc\Router;
 
 $router = new Router();
@@ -26,6 +27,7 @@ $router->addRoute('/menu', MenuController::class, 'index');
 $router->addRoute('/about', AboutController::class, 'index');
 $router->addRoute('/home', HomeController::class, 'index');
 $router->addRoute('/login', LoginController::class, 'index');
+$router->addRoute('/logout', LogoutController::class, 'logout');
 $router->addRoute('/register', RegisterController::class, 'create');
 $router->addRoute('/cart', CartController::class, 'index');
 

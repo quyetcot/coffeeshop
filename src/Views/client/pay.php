@@ -37,7 +37,7 @@
     <div class="form-order">
         <form action="" method="post" onsubmit="ValidateForm()">
             <h2>Thông tin khách hàng</h2>
-            <div><input type="text" name="name" id="" placeholder="Họ và tên" required></div>
+            <div><input type="text" name="name" id=""  value="" placeholder="Họ và tên" required></div>
             <div><input type="tel" name="phone" id="" placeholder="Số điện thoại" required></div>
             <div><input type="text" name="address" id="" placeholder="Địa chỉ" required></div>
             <input type="hidden" name="sum_price" value="<?=$sum_price?>">

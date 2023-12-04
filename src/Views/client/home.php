@@ -1,4 +1,6 @@
-
+<?php
+print_r($_SESSION['user']);
+?>
 
   <!-- Carousel Start -->
   <div class="container-fluid p-0 mb-5">
