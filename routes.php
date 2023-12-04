@@ -4,6 +4,7 @@ use Ductong\BaseMvc\Controllers\Admin\UserController;
 use Ductong\BaseMvc\Controllers\Admin\CategoryController;
 use Ductong\BaseMvc\Controllers\Admin\DashboardController;
 use Ductong\BaseMvc\Controllers\Admin\ProductController;
+use Ductong\BaseMvc\Controllers\Admin\CommentController;
 use Ductong\BaseMvc\Controllers\Client\DetailProductController;
 use Ductong\BaseMvc\Controllers\Client\AboutController;
 use Ductong\BaseMvc\Controllers\Client\CartController;
@@ -20,6 +21,11 @@ use Ductong\BaseMvc\Router;
 $router = new Router();
 
 $router->addRoute('/', IndexController::class, 'index');
+
+$router->addRoute('/admin/comments', CommentController::class, 'index');
+$router->addRoute('/admin/comments/create', CommentController::class, 'create');
+$router->addRoute('/admin/comments/update', CommentController::class, 'update');
+$router->addRoute('/admin/comments/delete', CommentController::class, 'delete');
 
 $router->addRoute('/detail_product', DetailProductController::class, 'index');
 $router->addRoute('/menu', MenuController::class, 'index');

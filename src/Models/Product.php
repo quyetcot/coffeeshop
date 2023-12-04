@@ -85,5 +85,4 @@ class Product extends Model {
 
         return $stmt->fetchAll();
     }
-  
 }

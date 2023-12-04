@@ -131,4 +131,15 @@ class ProductController extends Controller {
 
         header('Location: /admin/products');
     }
+    public function detailProduct() {
+        // Lấy thông tin sản phẩm hiện tại
+       
+        $product = (new Product)->detailProduct($_GET['id']);
+
+        // Lấy danh sách sản phẩm cùng loại
+        $relatedProducts = (new Product)->getRelatedProducts($product['category_id']);
+    
+        // Gửi dữ liệu đến view
+        $this->render('detail_product', ['product' => $product, 'relatedProducts' => $relatedProducts]);
+    }
 }
