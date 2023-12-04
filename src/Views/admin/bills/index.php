@@ -32,9 +32,7 @@
                         <div class="col-sm-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h5>Danh sách User</h5>
-
-                                    <a href="/admin/users/create" class="btn btn-info btn-sm">Tạo mới</a>
+                                    <h5>Danh sách Đơn hàng</h5>
                                 </div>
                                 <div class="card-block">
                                     <div class="dt-responsive table-responsive">
@@ -61,7 +59,7 @@
                                                         <td><?= $bill['sum_price'] ?>$</td>
                                                         <td><?= $bill['pttt'] ?></td>
                                                         <td>
-                                                            <a href="/admin/users/update?id=<?= $bill['id'] ?>" class="btn btn-primary btn-sm">Xác nhận</a>
+                                                            <a href="" class="btn btn-primary btn-sm">Xác nhận</a>
 
                                                             <form action="/admin/users/delete?id=<?= $bill['id'] ?>" method="post">
                                                                 <button type="submit" onclick="return confirm('Bạn có chắc chắn xóa?');" class="btn btn-danger btn-sm mt-2">Xóa</button>
