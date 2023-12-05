@@ -12,7 +12,7 @@ class ProductController extends Controller {
     public function index() {
         $products = (new Product())->all();
         $categories = (new Category())->all();
-
+        $getLatestLimit10 = (new Product)->getLatestLimit10();
         // Mảng này có cấu trúc, key là id danh mục, value là tên danh mục
         // Tạo ra mảng này để hiển thị tên danh mục sản phẩm ở danh sách
         $arrayCategoryIdName = [];
@@ -21,10 +21,13 @@ class ProductController extends Controller {
         }
 
         $this->renderAdmin("products/index", 
-            [
+            [   
                 "products" => $products, 
-                "arrayCategoryIdName" => $arrayCategoryIdName
+                "arrayCategoryIdName" => $arrayCategoryIdName,
+                "categories"=> $categories,
+                "getLatestLimit10"=> $getLatestLimit10
             ]
+            
         );
     }
 
@@ -131,15 +134,5 @@ class ProductController extends Controller {
 
         header('Location: /admin/products');
     }
-    public function detailProduct() {
-        // Lấy thông tin sản phẩm hiện tại
-       
-        $product = (new Product)->detailProduct($_GET['id']);
-
-        // Lấy danh sách sản phẩm cùng loại
-        $relatedProducts = (new Product)->getRelatedProducts($product['category_id']);
-    
-        // Gửi dữ liệu đến view
-        $this->render('detail_product', ['product' => $product, 'relatedProducts' => $relatedProducts]);
-    }
+   
 }

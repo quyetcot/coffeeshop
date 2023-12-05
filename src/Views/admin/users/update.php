@@ -39,14 +39,20 @@
                                         <label for="name">Name</label>
                                         <input type="text" name="name" class="form-control" value="<?= $user['name'] ?>">
 
+                                        <label for="phone" class="mt-3">Phone</label>
+                                        <input type="text" name="phone" class="form-control" value="<?= $user['phone'] ?>">
+
                                         <label for="address" class="mt-3">Email</label>
                                         <input type="email" name="email" class="form-control" value="<?= $user['email'] ?>">
 
-                                        <label for="password" class="mt-3">Password</label>
-                                        <input type="password" name="password" class="form-control" value="<?= $user['password'] ?>">
-
                                         <label for="address" class="mt-3">Address</label>
                                         <input type="text" name="address" class="form-control" value="<?= $user['address'] ?>">
+
+                                        <label for="password" class="mt-3">Password</label>
+                                        <input type="password" name="password" class="form-control" value="<?= $user['password'] ?>">
+                         
+                                        <label for="confirm_password" class="mt-3">Confirm_password</label>
+                                        <input type="password" name="confirm_password" class="form-control" value="<?= $user['confirm_password'] ?>">
 
                                         <button type="submit" name="btn-submit" class="btn btn-info mt-3">Submit</button>
                                         <a href="/admin/users" class="btn btn-primary mt-3">Quay lại d/s</a>

@@ -1,5 +1,5 @@
 <?php
-print_r($_SESSION['user']);
+// print_r($_SESSION['user']);
 ?>
 
   <!-- Carousel Start -->
@@ -41,17 +41,17 @@ print_r($_SESSION['user']);
                 <h1 class="display-4">Competitive Pricing</h1>
             </div>
             <div class="row">
-            <?php foreach ($products as $product) : ?>
+            <?php foreach ($getLatestLimit10 as $product) : ?>
                 <div class="col-lg-6">
-                    <a href="/detail_product?id=<?= $product['id'] ?>" class="btn btn_primary">
+                    <a href="/detail_product?id=<?= $product['p_id'] ?>" class="btn btn_primary">
                     <div class="row align-items-center mb-5">
                         <div class="col-4 col-sm-3">
-                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="<?= $product['img'] ?>" alt="">
-                            <h5 class="menu-price">$<?= $product['price_sale'] ?></h5>
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="<?= $product['p_img'] ?>" alt="">
+                            <h5 class="menu-price">$<?= $product['p_price_sale'] ?></h5>
                         </div>
                         <div class="col-8 col-sm-9">
-                            <h4><?= $product['name'] ?></h4>
-                            <p class="m-0"><?= $product['description'] ?></p>
+                            <h4><?= $product['p_name'] ?></h4>
+                            <p class="m-0"><?= $product['p_description'] ?></p>
                         </div>
                     </div>
                     </a>

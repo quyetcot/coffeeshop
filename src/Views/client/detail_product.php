@@ -11,19 +11,6 @@
 </div>
 <!-- Page Header End -->
 
-<!-- Page Header Start -->
-<div class="container-fluid page-header mb-5 position-relative overlay-bottom">
-    <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 200px">
-        <h1 class="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase">Detail Product</h1>
-        <div class="d-inline-flex mb-lg-5">
-            <p class="m-0 text-white"><a class="text-white" href="">Home</a></p>
-            <p class="m-0 text-white px-2">/</p>
-            <p class="m-0 text-white">Reservation</p>
-        </div>
-    </div>
-</div>
-<!-- Page Header End -->
-
 
 <!-- Reservation Start -->
 <div class="container-fluid py-5">
@@ -44,8 +31,7 @@
                         <p class="text-white" name="description">
                             <?php echo $detailProduct['description']; ?>
                         </p>
-                        <button class="btn btn-primary" name="add-to-cart">Add to Cart</button>
-                        <button class="btn btn-primary" name="buy-now">Buy now</button>
+                        <button data-id="<?= $detailProduct['id'] ?>" class="btn btn-primary" onclick="addToCart(<?= $detailProduct['id'] ?>,'<?= $detailProduct['name'] ?>',<?= $detailProduct['price'] ?>,'<?= $detailProduct['img'] ?>')">Add to Cart</button>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -79,20 +65,20 @@
                 <?php endif; ?>
 
                 <div>
-    <h2>Bình luận</h2>
-    <?php foreach ($comments as $comment) : ?>
-        <?php foreach ($users as $user) : ?>
-            <?php if ($comment['id_user'] == $user['id'] && $comment['id_product'] == $detailProduct['id']) : ?>
-                <div class="usercm">
-                    <?= $user['name'] ?>
+                    <h2>Bình luận</h2>
+                    <?php foreach ($comments as $comment) : ?>
+                        <?php foreach ($users as $user) : ?>
+                            <?php if ($comment['id_user'] == $user['id'] && $comment['id_product'] == $detailProduct['id']) : ?>
+                                <div class="usercm">
+                                    <?= $user['name'] ?>
+                                </div>
+                                <div class="cm">
+                                    <?= $comment['content'] ?>
+                                </div>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    <?php endforeach; ?>
                 </div>
-                <div class="cm">
-                    <?= $comment['content'] ?>
-                </div>
-            <?php endif; ?>
-        <?php endforeach; ?>
-    <?php endforeach; ?>
-</div>
 
 
     </div>

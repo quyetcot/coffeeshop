@@ -39,14 +39,22 @@
                                         <label for="name">Name</label>
                                         <input type="text" name="name" class="form-control">
 
+                                        <label for="phone">Phone</label>
+                                        <input type="text" name="phone" class="form-control">
+
                                         <label for="email" class="mt-3">Email</label>
                                         <input type="email" name="email" class="form-control">
 
-                                        <label for="password" class="mt-3">Password</label>
-                                        <input type="password" name="password" class="form-control">
-
                                         <label for="address" class="mt-3">Address</label>
                                         <input type="text" name="address" class="form-control">
+
+                                        <label for="password" class="mt-3">Password</label>
+                                        <input type="password" name="password" class="form-control">
+                                        
+                                        <label for="confirm_password" class="mt-3">Confirm_password</label>
+                                        <input type="password" name="confirm_password" class="form-control">
+
+
 
                                         <button type="submit" name="btn-submit" class="btn btn-info mt-3">Submit</button>
                                         <a href="/admin/users" class="btn btn-primary mt-3">Quay lại d/s</a>
