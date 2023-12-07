@@ -64,7 +64,7 @@
                     </div>
                 <?php endif; ?>
 
-                <div>
+                <div id="commentSection">
                     <h2>Bình luận</h2>
                     <?php foreach ($comments as $comment) : ?>
                         <?php foreach ($users as $user) : ?>
@@ -79,6 +79,13 @@
                         <?php endforeach; ?>
                     <?php endforeach; ?>
                 </div>
+                <div class="">  
+                    <form action="" method="post">
+                        <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
+                        <label class="btn btn-primary mt-3" for="content">Nội dung bình luận:</label>
+                        <input class="btn btn-primary mt-2" type="text" name="content" required>
+                        <button class="btn btn-info mt-3" type="submit">Gửi bình luận</button>
+                    </form></div>
 
 
     </div>
@@ -115,4 +122,24 @@
             }
         });
     }
+    $(document).ready(function () {
+        // Gửi bình luận bằng AJAX
+        $('form').submit(function (event) {
+            event.preventDefault();
+
+            // Lấy dữ liệu từ form
+            var formData = $(this).serialize();
+
+            // Gửi AJAX request
+            $.ajax({
+                type: 'POST',
+                url: 'admin/comments/create',
+                data: formData,
+                success: function (data) {
+                    // Nếu gửi thành công, cập nhật phần hiển thị bình luận
+                    $('#commentSection').html(data);
+                }
+            });
+        });
+    });
 </script>
