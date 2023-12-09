@@ -42,4 +42,49 @@ class DetailProductController extends Controller
             ]
         );
     }
+    public function create(){
+            $products = (new Product())->all();
+            $users = (new User())->all();
+            $arrayUserIdName = [];
+            foreach ($users as $user) {
+                $arrayUserIdName[$user['id']] = $user['name'];   
+            }
+            if (isset($_POST["btn-submit"])) { 
+                $data = [
+                    'id_user' =>  $_POST['id_user'],
+                    'id_product' =>  $_POST['id_product'],
+                    'content' => $_POST['content'],
+                    'date' => $_POST['date'],
+                ];
+    
+                (new Comment())->insert($data);
+    
+                header('Location: /detail_product');
+            }
+            $this->renderAdmin("comments/create", 
+            ["products"=> $products ,"users"=> $users, "arrayUserIdName" => $arrayUserIdName,]);
+    }
+ 
+    // Phương thức để thêm bình luận
+    public function addComment() {
+        // Kiểm tra xem có dữ liệu được gửi từ form không
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // Xử lý dữ liệu và thêm bình luận vào cơ sở dữ liệu
+            // Lưu ý: Đây chỉ là một ví dụ, bạn cần điều chỉnh nó dựa trên cấu trúc cơ sở dữ liệu và logic của bạn.
+            
+            // Lấy dữ liệu từ form
+            $productId = $_POST['id_product'];
+            $content = $_POST['content'];
+
+            // Thực hiện thêm bình luận vào cơ sở dữ liệu (ví dụ)
+            $commentId = $this->Comment->addComment($productId, $content);
+
+            // Chuyển hướng hoặc thực hiện bất kỳ xử lý nào khác sau khi thêm bình luận thành công
+            header("Location: /detail_product?id=" . $productId);
+            exit();
+        }
+    }
 }
+
+
+

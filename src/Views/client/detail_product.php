@@ -79,6 +79,7 @@
                         <?php endforeach; ?>
                     <?php endforeach; ?>
                 </div>
+
                 <div class="">  
                     <form action="" method="post">
                         <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
@@ -96,7 +97,7 @@
 
 
 <!-- Reservation End -->
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script>
     let totalProduct = document.getElementById('totalProduct');
 
@@ -142,4 +143,4 @@
             });
         });
     });
-</script>
+</script> -->
