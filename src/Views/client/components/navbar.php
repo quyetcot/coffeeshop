@@ -1,7 +1,7 @@
   <!-- Navbar Start -->
   <div class="container-fluid p-0 nav-bar " >
         <nav class="navbar navbar-expand-lg bg-none navbar-dark py-3">
-            <a href="index.html" class="navbar-brand px-lg-4 m-0">
+            <a href="/home" class="navbar-brand px-lg-4 m-0">
                 <h1 class="m-0 display-4 text-uppercase text-white">Roza Cafe</h1>
             </a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -22,7 +22,7 @@
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tài khoản</a>
                         <div class="dropdown-menu text-capitalize">
                             <a href="/" class="dropdown-item">Đăng xuất</a>
-                            <a href="" class="dropdown-item">Thông tin</a>
+                            <a href="/thongtin" class="dropdown-item">Thông tin</a>
                             
                         </div>
                     </div>

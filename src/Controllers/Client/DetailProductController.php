@@ -63,7 +63,7 @@ class DetailProductController extends Controller
             $this->renderAdmin("comments/create", 
             ["products"=> $products ,"users"=> $users, "arrayUserIdName" => $arrayUserIdName,]);
     }
- 
+
     
 }
 
