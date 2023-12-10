@@ -6,7 +6,7 @@
                 <div class="page-header-title">
                     <i class="feather icon-home bg-c-blue"></i>
                     <div class="d-inline">
-                        <h5>Dashboard</h5>
+                        <h5>Thống kê</h5>
                     </div>
                 </div>
             </div>
@@ -16,7 +16,7 @@
                         <li class="breadcrumb-item">
                             <a href="index.html"><i class="feather icon-home"></i></a>
                         </li>
-                        <li class="breadcrumb-item"><a href="#!">Dashboard</a> </li>
+                        <li class="breadcrumb-item"><a href="#!">Thống kê</a> </li>
                     </ul>
                 </div>
             </div>

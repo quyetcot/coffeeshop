@@ -9,7 +9,9 @@ use Ductong\BaseMvc\Models\User ;
 
 
 class CommentController extends Controller {
-
+    public function __construct() {
+        check_auth();
+    }
     
     public function index() {
         $comments = (new Comment())->all(); 
@@ -75,5 +77,35 @@ class CommentController extends Controller {
 
         header('Location: /admin/comments');
     }
+    // Phương thức để thêm bình luận
+    public function addComment() {
+        // Kiểm tra xem có dữ liệu được gửi từ form không
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // Xử lý dữ liệu và thêm bình luận vào cơ sở dữ liệu
+            // Lưu ý: Đây chỉ là một ví dụ, bạn cần điều chỉnh nó dựa trên cấu trúc cơ sở dữ liệu và logic của bạn.
+            
+            // Lấy dữ liệu từ form
+            $productId = $_POST['product_id'];
+            $content = $_POST['content'];
 
+            // Thực hiện thêm bình luận vào cơ sở dữ liệu (ví dụ)
+                (new Comment())->addComment($productId, $content);
+            // Chuyển hướng hoặc thực hiện bất kỳ xử lý nào khác sau khi thêm bình luận thành công
+            header("Location: /detail_product?id=" . $productId);
+            exit();
+            
+        }
+    }
+    public function ktra(){
+        if (isset($_SESSION['user_id'])) {
+            // Người dùng đã đăng nhập, thực hiện các thao tác cần thiết
+            $userId = $_SESSION['user_id'];
+            // Các xử lý khác...
+        } else {
+            // Người dùng chưa đăng nhập, có thể chuyển hướng hoặc xử lý theo logic của bạn
+            // Ví dụ chuyển hướng đến trang đăng nhập
+            header("Location: /login");
+            exit();
+        }
+    }
 }

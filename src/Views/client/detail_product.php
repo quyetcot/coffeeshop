@@ -1,3 +1,13 @@
+<?php
+if (isset($_SESSION['user'])) {
+    // Kiểm tra xem người dùng đã đăng nhập chưa
+$user = isset($_SESSION['user']) ? $_SESSION['user'] : array('name' => '');
+
+
+} else {
+    echo "bạn chưa đăng nhập" ;
+}
+?>
 <!-- Page Header Start -->
 <div class="container-fluid page-header mb-5 position-relative overlay-bottom">
     <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 400px">
@@ -59,30 +69,30 @@
 
                 <?php endif; ?>
             <?php endforeach; ?>
-
-            <?php if ($isCategoryDisplayed) : ?>
-                    </div>
-                <?php endif; ?>
-
+        
                 <div id="commentSection">
                     <h2>Bình luận</h2>
                     <?php foreach ($comments as $comment) : ?>
                         <?php foreach ($users as $user) : ?>
                             <?php if ($comment['id_user'] == $user['id'] && $comment['id_product'] == $detailProduct['id']) : ?>
-                                <div class="usercm">
+                                <div class="fa fa-check text-primary mr-3">
+                                    Người gửi:
                                     <?= $user['name'] ?>
                                 </div>
-                                <div class="cm">
+                         
+                                <div class="fa fa-check text-primary mr-3">
+                                <?= $comment['date'] ?> |
                                     <?= $comment['content'] ?>
-                                </div>
+                                </div>       <hr>
                             <?php endif; ?>
                         <?php endforeach; ?>
                     <?php endforeach; ?>
                 </div>
-
                 <div class="">  
                     <form action="" method="post">
                         <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
+                        <label class="btn btn-primary mt-3" for="users">Người bình luận:</label>
+                        <input class="btn btn-primary mt-2" type="text" name="users" value="<?=$user['name']?>" required>
                         <label class="btn btn-primary mt-3" for="content">Nội dung bình luận:</label>
                         <input class="btn btn-primary mt-2" type="text" name="content" required>
                         <button class="btn btn-info mt-3" type="submit">Gửi bình luận</button>
@@ -97,7 +107,9 @@
 
 
 <!-- Reservation End -->
-<!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<!-- Reservation End -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script>
     let totalProduct = document.getElementById('totalProduct');
 
@@ -123,24 +135,5 @@
             }
         });
     }
-    $(document).ready(function () {
-        // Gửi bình luận bằng AJAX
-        $('form').submit(function (event) {
-            event.preventDefault();
-
-            // Lấy dữ liệu từ form
-            var formData = $(this).serialize();
-
-            // Gửi AJAX request
-            $.ajax({
-                type: 'POST',
-                url: 'admin/comments/create',
-                data: formData,
-                success: function (data) {
-                    // Nếu gửi thành công, cập nhật phần hiển thị bình luận
-                    $('#commentSection').html(data);
-                }
-            });
-        });
-    });
-</script> -->
+   
+</script>

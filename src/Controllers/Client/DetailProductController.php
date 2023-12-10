@@ -12,7 +12,6 @@ use Ductong\BaseMvc\Models\User;
 class DetailProductController extends Controller
 {
 
-
     public function index()
     {
         $products = (new Product())->all();
@@ -65,25 +64,7 @@ class DetailProductController extends Controller
             ["products"=> $products ,"users"=> $users, "arrayUserIdName" => $arrayUserIdName,]);
     }
  
-    // Phương thức để thêm bình luận
-    public function addComment() {
-        // Kiểm tra xem có dữ liệu được gửi từ form không
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // Xử lý dữ liệu và thêm bình luận vào cơ sở dữ liệu
-            // Lưu ý: Đây chỉ là một ví dụ, bạn cần điều chỉnh nó dựa trên cấu trúc cơ sở dữ liệu và logic của bạn.
-            
-            // Lấy dữ liệu từ form
-            $productId = $_POST['id_product'];
-            $content = $_POST['content'];
-
-            // Thực hiện thêm bình luận vào cơ sở dữ liệu (ví dụ)
-            $commentId = $this->Comment->addComment($productId, $content);
-
-            // Chuyển hướng hoặc thực hiện bất kỳ xử lý nào khác sau khi thêm bình luận thành công
-            header("Location: /detail_product?id=" . $productId);
-            exit();
-        }
-    }
+    
 }
 
 

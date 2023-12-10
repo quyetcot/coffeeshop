@@ -9,6 +9,9 @@ use Ductong\BaseMvc\Controller;
 
 class CartController extends Controller
 {
+    public function __construct() {
+        check_auth();
+    }
     function index(){
         if (!empty($_SESSION['cart'])) {
             $cart = $_SESSION['cart'];

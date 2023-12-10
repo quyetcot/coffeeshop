@@ -51,7 +51,7 @@
                         </div>
                         <div class="col-8 col-sm-9">
                             <h4><?= $product['p_name'] ?></h4>
-                           
+                            
                         </div>
                     </div>
                     </a>

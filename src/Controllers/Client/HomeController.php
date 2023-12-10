@@ -9,6 +9,9 @@ use Ductong\BaseMvc\Models\Product;
 
 class HomeController extends Controller
 {
+    public function __construct() {
+        check_auth();
+    }
 
     public function index() {
    
@@ -21,7 +24,6 @@ class HomeController extends Controller
             $categoryID[] = $category['id'];
             
         }
-        
         $getLatestLimit10 = (new Product)->getLatestLimit10();
         $getAllByCategoryID = (new Product)->getAllByCategoryID($categoryID);
 
