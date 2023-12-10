@@ -13,4 +13,8 @@ class Comment extends Model {
         'date'
     ];
 
+    public function addComment(){
+
+    }
+
 }

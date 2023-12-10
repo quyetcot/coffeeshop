@@ -22,12 +22,12 @@ use Ductong\BaseMvc\Router;
 $router = new Router();
 
 $router->addRoute('/', IndexController::class, 'index');
-
+//bình luận
 $router->addRoute('/admin/comments', CommentController::class, 'index');
 $router->addRoute('/admin/comments/create', CommentController::class, 'create');
 $router->addRoute('/admin/comments/update', CommentController::class, 'update');
 $router->addRoute('/admin/comments/delete', CommentController::class, 'delete');
-
+//view
 $router->addRoute('/detail_product', DetailProductController::class, 'index');
 $router->addRoute('/menu', MenuController::class, 'index');
 $router->addRoute('/about', AboutController::class, 'index');
@@ -40,8 +40,9 @@ $router->addRoute('/cart', CartController::class, 'index');
 $router->addRoute('/pay', PayController::class, 'create');
 $router->addRoute('/service', ServiceController::class, 'index');
 $router->addRoute('/contact', ContactController::class, 'index');
-
+//admin
 $router->addRoute('/admin/dashboard', DashboardController::class, 'index');
+
 $router->addRoute('/admin/bills', PayController::class, 'index');
 $router->addRoute('/admin/users', UserController::class, 'index');
 $router->addRoute('/admin/users/create', UserController::class, 'create');

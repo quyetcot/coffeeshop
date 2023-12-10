@@ -7,7 +7,9 @@ use Ductong\BaseMvc\Models\Category;
 use Ductong\BaseMvc\Models\Product;
 
 class MenuController extends Controller
-{
+{  public function __construct() {
+    check_auth();
+}
 
     
         public function index() {
