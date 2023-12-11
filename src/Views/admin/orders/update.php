@@ -6,7 +6,7 @@
                 <div class="page-header-title">
                     <i class="feather icon-home bg-c-blue"></i>
                     <div class="d-inline">
-                        <h5>Category</h5>
+                        <h5>Đơn hàng</h5>
                     </div>
                 </div>
             </div>
@@ -16,7 +16,7 @@
                         <li class="breadcrumb-item">
                             <a href="/admin/dashboard"><i class="feather icon-home"></i></a>
                         </li>
-                        <li class="breadcrumb-item"><a href="#!">Category</a> </li>
+                        <li class="breadcrumb-item"><a href="#!">Đơn hàng</a> </li>
                     </ul>
                 </div>
             </div>
@@ -35,12 +35,24 @@
                                     <h5>Cập nhật </h5>
                                 </div>
                                 <div class="card-block">
-                                    <form action="" method="post">
-                                        <label for="name">Name</label>
-                                        <input type="text" name="name" class="form-control" value="<?= $category['name'] ?>">
+                                    <form action="" method="post" enctype="multipart/form-data">
+                                        < <label for="name">Name</label>
+                                            <input type="text" required name="name" class="form-control" value="<?= $order['name'] ?>">
 
-                                        <button type="submit" name="btn-submit" class="btn btn-info mt-3">Submit</button>
-                                        <a href="/admin/categories" class="btn btn-primary mt-3">Quay lại d/s</a>
+                                            <label for="email">Email</label>
+                                            <input type="text" required name="email" class="form-control" value="<?= $order['email'] ?>">
+
+                                            <label for="phone">Phone</label>
+                                            <input type="tel" required name="phone" class="form-control">
+
+                                            <label for="address">Address</label>
+                                            <input type="text" required name="address" class="form-control" value="<?= $order['address'] ?>">
+            
+
+                                           
+
+                                            <button type="submit" name="btn-submit" class="btn btn-info mt-3">Submit</button>
+                                            <a href="/admin/products" class="btn btn-primary mt-3">Quay lại d/s</a>
                                     </form>
                                 </div>
                             </div>

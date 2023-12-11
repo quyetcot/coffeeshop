@@ -4,14 +4,16 @@ namespace Ductong\BaseMvc\Models;
 
 use Ductong\BaseMvc\Model;
 
-class User extends Model {
-    protected $table = 'users';
+class Cart extends Model
+{
+    protected $table = 'orders';
     protected $columns = [
         'name',
-        'phone',
         'email',
+        'phone',
         'address',
-        'password',
-        'confirm_password'
+        'total_price',
+        'status',
+        'created_at',
     ];
 }

@@ -4,11 +4,11 @@ namespace Ductong\BaseMvc\Models;
 
 use Ductong\BaseMvc\Model;
 
-class User extends Model {
+class Register extends Model {
     protected $table = 'users';
     protected $columns = [
+        'user_name',
         'name',
-        'phone',
         'email',
         'address',
         'password',

@@ -6,7 +6,7 @@
                 <div class="page-header-title">
                     <i class="feather icon-home bg-c-blue"></i>
                     <div class="d-inline">
-                        <h5>Category</h5>
+                        <h5>Comment</h5>
                     </div>
                 </div>
             </div>
@@ -16,7 +16,7 @@
                         <li class="breadcrumb-item">
                             <a href="/admin/dashboard"><i class="feather icon-home"></i></a>
                         </li>
-                        <li class="breadcrumb-item"><a href="#!">Category</a> </li>
+                        <li class="breadcrumb-item"><a href="#!">Comment</a> </li>
                     </ul>
                 </div>
             </div>
@@ -32,17 +32,35 @@
                         <div class="col-sm-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h5>Cập nhật </h5>
+                                    <h5>Thêm mới </h5>
                                 </div>
                                 <div class="card-block">
                                     <form action="" method="post">
-                                        <label for="name">Name</label>
-                                        <input type="text" name="name" class="form-control" value="<?= $category['name'] ?>">
+                                        <label for="id_user">Người dùng</label>
+                                        <select name="id_user" id="id_user" class="form-control">
+                                            <?php foreach ($users as $user) : ?>
+                                                <option value="<?= $user['id'] ?>"><?= $user['name'] ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+
+                                        <label for="id_product">Sản Phẩm</label>
+                                        <select name="id_product" id="id_product" class="form-control">
+                                            <?php foreach ($products as $product) : ?>
+                                                <option value="<?= $product['id'] ?>"><?= $product['name'] ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+
+                                        <label for="content">Bình luận</label>
+                                        <input type="text" name="content" class="form-control">
+
+                                        <label for="date">Ngày</label>
+                                        <input type="date" name="date" class="form-control">
 
                                         <button type="submit" name="btn-submit" class="btn btn-info mt-3">Submit</button>
-                                        <a href="/admin/categories" class="btn btn-primary mt-3">Quay lại d/s</a>
+                                        <a href="/admin/comments" class="btn btn-primary mt-3">Quay lại danh sách</a>
                                     </form>
                                 </div>
+
                             </div>
                         </div>
                     </div>

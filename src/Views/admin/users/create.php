@@ -6,7 +6,7 @@
                 <div class="page-header-title">
                     <i class="feather icon-home bg-c-blue"></i>
                     <div class="d-inline">
-                        <h5>Thêm User</h5>
+                        <h5>User</h5>
                     </div>
                 </div>
             </div>
@@ -14,9 +14,9 @@
                 <div class="page-header-breadcrumb">
                     <ul class=" breadcrumb breadcrumb-title">
                         <li class="breadcrumb-item">
-                            <a href="index.html"><i class="feather icon-home"></i></a>
+                            <a href="/admin/dashboard"><i class="feather icon-home"></i></a>
                         </li>
-                        <li class="breadcrumb-item"><a href="#!">Thêm User</a> </li>
+                        <li class="breadcrumb-item"><a href="#!">User</a> </li>
                     </ul>
                 </div>
             </div>
@@ -29,32 +29,43 @@
                 <div class="page-body">
 
                     <div class="row">
-                    <div class="container">
+                        <div class="col-sm-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5>Thêm mới </h5>
+                                </div>
+                                <div class="card-block">
+                                    <form action="" method="post">
+                                        <label for="name">Name</label>
+                                        <input type="text" name="name" class="form-control">
 
-        <form action="" method="post">
-            <label for="name">Name</label>
-            <input type="text" name="name" class="form-control">
+                                        <label for="phone">Phone</label>
+                                        <input type="text" name="phone" class="form-control">
 
-            <label for="email" class="mt-3">Email</label>
-            <input type="email" name="email" class="form-control">
+                                        <label for="email" class="mt-3">Email</label>
+                                        <input type="email" name="email" class="form-control">
 
-            <label for="password" class="mt-3">Password</label>
-            <input type="password" name="password" class="form-control">
+                                        <label for="address" class="mt-3">Address</label>
+                                        <input type="text" name="address" class="form-control">
 
-            <label for="address" class="mt-3">Address</label>
-            <input type="text" name="address" class="form-control">
+                                        <label for="password" class="mt-3">Password</label>
+                                        <input type="password" name="password" class="form-control">
+                                        
+                                        <label for="confirm_password" class="mt-3">Confirm_password</label>
+                                        <input type="password" name="confirm_password" class="form-control">
 
-            <button type="submit" name="btn-submit" class="btn btn-info mt-3">Submit</button>
-            <a href="/admin/users" class="btn btn-primary mt-3">Quay lại d/s</a>
-        </form>
-    </div>
 
-                    
+
+                                        <button type="submit" name="btn-submit" class="btn btn-info mt-3">Submit</button>
+                                        <a href="/admin/users" class="btn btn-primary mt-3">Quay lại d/s</a>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
             </div>
         </div>
     </div>
-</div>
 </div>

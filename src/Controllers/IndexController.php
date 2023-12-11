@@ -1,13 +1,13 @@
 <?php
 
-namespace Ductong\BaseMvc\Controllers\Client;
+namespace Ductong\BaseMvc\Controllers;
 
 use Ductong\BaseMvc\Controller;
 use Ductong\BaseMvc\Models\Category;
 use Ductong\BaseMvc\Models\Product;
 
 
-class HomeController extends Controller
+class IndexController extends Controller
 {
 
     public function index() {
@@ -25,7 +25,7 @@ class HomeController extends Controller
         $getLatestLimit10 = (new Product)->getLatestLimit10();
         $getAllByCategoryID = (new Product)->getAllByCategoryID($categoryID);
 
-        $this->renderClient('home', [
+        $this->render('index', [
             'products' => $products,
             "arrayCategoryIdName" => $arrayCategoryIdName,
             'getAllByCategoryID' => $getAllByCategoryID,

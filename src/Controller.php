@@ -22,4 +22,5 @@ class Controller {
 
         include "Views/client/master.php";
     }
+    
 }
