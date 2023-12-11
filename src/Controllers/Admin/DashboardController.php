@@ -12,12 +12,14 @@ class DashboardController extends Controller {
         $totalQuantity = (new Dashboard())->getTotalQuantity();
         $totalUser =(new Dashboard())->getTotalUser();
         $totalBill =(new Dashboard())->getTotalBill();
+        $totalSale =(new Dashboard())->getTotalSale();
 
         $this->renderAdmin('dashboard', [
             'dashboard' => $dashboard,
             'totalQuantity' => $totalQuantity,
             'totalUser' => $totalUser,
             'totalBill' => $totalBill,
+            'totalSale' => $totalSale,
         ]);
     }
 }
