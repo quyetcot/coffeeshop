@@ -50,11 +50,11 @@
 <div class="container-fluid pt-5">
     <div class="container">
     <form action="" method="post">
-    <label for="name">Name</label>
-    <input type="text" name="name" class="form-control">
+    <label for="name">Tên đăng nhập</label>
+    <input type="text" name="user_name" class="form-control">
 
    
-    <label for="password" class="mt-3">Password</label>
+    <label for="password" class="mt-3">Mật khẩu</label>
     <input type="password" name="password" class="form-control">
 
 

@@ -49,7 +49,7 @@ class Dashboard extends Model
         return $totalUser;
     }
     public function getTotalBill(){
-        $sql = "SELECT COUNT(*) as totalBill FROM bills";
+        $sql = "SELECT COUNT(*) as totalBill FROM orders";
 
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
@@ -63,7 +63,7 @@ class Dashboard extends Model
         return $totalBill;
     }
     public function getTotalSale(){
-        $sql = "SELECT SUM(sum_price) AS totalSale FROM bills";
+        $sql = "SELECT SUM(total_price) AS totalSale FROM orders";
         $stmt = $this->conn->prepare($sql);
     $stmt->execute();
 

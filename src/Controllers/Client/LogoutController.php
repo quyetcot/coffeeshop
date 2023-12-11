@@ -1,31 +1,23 @@
 <?php
 
-namespace Ductong\BaseMvc\Controllers;
+namespace Ductong\BaseMvc\Controllers\Client;
 
 use Ductong\BaseMvc\Controller;
-
+use Ductong\BaseMvc\Models\User;
 
 class LogoutController extends Controller
 {
-    
-   
+    public function __construct() {
+        check_auth();
+    }
+
     /*
         Đây là hàm hiển thị danh sách user
     */
-    public function logout() {
-        session_start(); // Bắt đầu session
+    public function index() {
+        unset($_SESSION['user']);
+        unset($_SESSION['cart']);
 
-        // Hủy tất cả các biến session
-        session_unset();
-        
-        
-        // Hủy session
-        session_destroy();
-        
-        // Chuyển hướng đến trang đăng nhập hoặc trang khác
-        header("Location: /");
-        exit();
         $this->render('logout');
-}
-
+    }
 }

@@ -24,15 +24,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($index !== false) {
         $_SESSION['cart'][$index]['quantity'] += 1;
     } else {
-        // Nếu sản phẩm chưa tồn tại thì thêm mới vào giỏ hàng
-        $product = [
-            'id' => $productId,
-            'name' => $productName,
+        $_SESSION['cart'][$productId] = [
             'price' => $productPrice,
-            'img' => $productImg,
+            'name' => $productName,
             'quantity' => 1
         ];
-        $_SESSION['cart'][] = $product;
+        // // Nếu sản phẩm chưa tồn tại thì thêm mới vào giỏ hàng
+        // $product = [
+        //     'id' => $productId,
+        //     'name' => $productName,
+        //     'price' => $productPrice,
+        //     'img' => $productImg,
+        //     'quantity' => 1
+        // ];
+        // $_SESSION['cart'][] = $product;
         // var_dump($_SESSION['cart']);die;
     }
     // Trả về số lượng sản phẩm của giỏ hàng

@@ -7,6 +7,7 @@ use Ductong\BaseMvc\Model;
 class Register extends Model {
     protected $table = 'users';
     protected $columns = [
+        'user_name',
         'name',
         'email',
         'address',

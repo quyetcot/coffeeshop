@@ -19,6 +19,7 @@ class RegisterController extends Controller
 
             $register = new Register();
             $data = [
+                'user_name' => $_POST['user_name'],
                 'name' => $_POST['name'],
                 'address' => $_POST['address'],
                 'email' => $_POST['email'],
@@ -37,6 +38,7 @@ class RegisterController extends Controller
     {
         if (isset($_POST['btn-submit'])) {
             $data = [
+                'user_name' => $_POST['user_name'],
                 'name' => $_POST['name'],
                 'address' => $_POST['address'],
                 'email' => $_POST['email'],
