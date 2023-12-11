@@ -38,5 +38,17 @@ class MenuController extends Controller
             ]);
         }
 
+        public function thongtin()
+        {
+            $user = array('name' => '', 'phone' => '', 'address' => '');
+        
+            if (isset($_SESSION['user'])) {
+               
+                $user = $_SESSION['user'];
+            }
+
+            return $user;
+        }
+        
     }
 

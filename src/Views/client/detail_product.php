@@ -1,11 +1,11 @@
 <?php
 if (isset($_SESSION['user'])) {
     // Kiểm tra xem người dùng đã đăng nhập chưa
-$user = isset($_SESSION['user']) ? $_SESSION['user'] : array('name' => '');
+    $user = isset($_SESSION['user']) ? $_SESSION['user'] : array('name' => '');
 
 
 } else {
-    echo "bạn chưa đăng nhập" ;
+    echo "bạn chưa đăng nhập";
 }
 ?>
 <!-- Page Header Start -->
@@ -41,7 +41,9 @@ $user = isset($_SESSION['user']) ? $_SESSION['user'] : array('name' => '');
                         <p class="text-white" name="description">
                             <?php echo $detailProduct['description']; ?>
                         </p>
-                        <button data-id="<?= $detailProduct['id'] ?>" class="btn btn-primary" onclick="addToCart(<?= $detailProduct['id'] ?>,'<?= $detailProduct['name'] ?>',<?= $detailProduct['price'] ?>,'<?= $detailProduct['img'] ?>')">Add to Cart</button>
+                        <button data-id="<?= $detailProduct['id'] ?>" class="btn btn-primary"
+                            onclick="addToCart(<?= $detailProduct['id'] ?>,'<?= $detailProduct['name'] ?>',<?= $detailProduct['price'] ?>,'<?= $detailProduct['img'] ?>')">Add
+                            to Cart</button>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -53,10 +55,10 @@ $user = isset($_SESSION['user']) ? $_SESSION['user'] : array('name' => '');
         </div>
         <?php $isCategoryDisplayed = false; ?>
 
-        <?php foreach ($products as $product) : ?>
-            <?php if ($product['category_id'] == $detailProduct['category_id'] && $product['id'] != $detailProduct['id']) : ?>
+        <?php foreach ($products as $product): ?>
+            <?php if ($product['category_id'] == $detailProduct['category_id'] && $product['id'] != $detailProduct['id']): ?>
 
-                <?php if (!$isCategoryDisplayed) : ?>
+                <?php if (!$isCategoryDisplayed): ?>
                     <div>
                         <h3> Sản phẩm cùng loại</h3>
                         <?php $isCategoryDisplayed = true; ?>
@@ -69,39 +71,50 @@ $user = isset($_SESSION['user']) ? $_SESSION['user'] : array('name' => '');
 
                 <?php endif; ?>
             <?php endforeach; ?>
-        
-                <div id="commentSection">
-                    <h2>Bình luận</h2>
-                    <?php foreach ($comments as $comment) : ?>
-                        <?php foreach ($users as $user) : ?>
-                            <?php if ($comment['id_user'] == $user['id'] && $comment['id_product'] == $detailProduct['id']) : ?>
-                                <div class="fa fa-check text-primary mr-3">
-                                    Người gửi:
-                                    <?= $user['name'] ?>
-                                </div>
-                         
-                                <div class="fa fa-check text-primary mr-3">
-                                <?= $comment['date'] ?> |
-                                    <?= $comment['content'] ?>
-                                </div>       <hr>
-                            <?php endif; ?>
-                        <?php endforeach; ?>
-                    <?php endforeach; ?>
-                </div>
-                <div class="">  
-                    <form action="" method="post">
-                        <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
-                        <label class="btn btn-primary mt-3" for="users">Người bình luận:</label>
-                        <input class="btn btn-primary mt-2" type="text" name="users" value="<?=$user['name']?>" required>
-                        <label class="btn btn-primary mt-3" for="content">Nội dung bình luận:</label>
-                        <input class="btn btn-primary mt-2" type="text" name="content" required>
-                        <button class="btn btn-info mt-3" type="submit">Gửi bình luận</button>
-                    </form></div>
 
+            <div id="commentSection">
+                <h2>Bình luận</h2>
+                <?php foreach ($comments as $comment): ?>
+                    <?php foreach ($users as $user): ?>
+                        <?php if ($comment['id_user'] == $user['id'] && $comment['id_product'] == $detailProduct['id']): ?>
+                            <div class="fa fa-check text-primary mr-3">
+                                Người gửi:
+                                <?= $user['name'] ?>
+                            </div>
+
+                            <div class="fa fa-check text-primary mr-3">
+                                <?= $comment['date'] ?> |
+                                <?= $comment['content'] ?>
+                            </div>
+                            <hr>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                <?php endforeach; ?>
+            </div>
+            <div class="comment-form">
+                <form action="/admin/comments/create" method="post">
+                    <input type="hidden" name="id_product" value="<?= $product['id'] ?>">
+
+                    <label for="users" class="btn btn-primary mt-3">Người bình luận:</label>
+                    <input type="text" name="users" class="btn btn-primary mt-2" value="<?= $user['id'] ?? ''  ?>" >
+                    <input type="text" name="users" class="btn btn-primary mt-2" value="<?= $user['name'] ?? ''  ?>" required>
+                            <br>
+                    <label for="content" class="btn btn-primary mt-3">Nội dung bình luận:</label>
+                    <input type="text" name="content" class="btn btn-primary mt-2" rows="3" required >
+                    <br>
+                    <label for="content" class="btn btn-primary mt-3">Ngày bình luận:</label>
+                    <input type="date" name="content" class="btn btn-primary mt-2" rows="3" required >
+
+                    <button type="submit" name="btn-submit" class="btn btn-info mt-3">Gửi bình luận</button>
+                </form>
+                
+            </div>
+
+
+
+        </div>
 
     </div>
-
-</div>
 </div>
 
 
@@ -126,14 +139,14 @@ $user = isset($_SESSION['user']) ? $_SESSION['user'] : array('name' => '');
                 price: productPrice,
                 img: productImg
             },
-            success: function(response) {
+            success: function (response) {
                 totalProduct.innerText = response;
                 alert('Bạn đã thêm sản phẩm vào giỏ hàng thành công!')
             },
-            error: function(error) {
+            error: function (error) {
                 console.log(error);
             }
         });
     }
-   
+
 </script>

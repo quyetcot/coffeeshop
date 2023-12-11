@@ -27,9 +27,13 @@ $router->addRoute('/admin/comments', CommentController::class, 'index');
 $router->addRoute('/admin/comments/create', CommentController::class, 'create');
 $router->addRoute('/admin/comments/update', CommentController::class, 'update');
 $router->addRoute('/admin/comments/delete', CommentController::class, 'delete');
+$router->addRoute('/ktra', CommentController::class, 'ktra');
 //view
 $router->addRoute('/detail_product', DetailProductController::class, 'index');
 $router->addRoute('/menu', MenuController::class, 'index');
+$router->addRoute('/thongtin', MenuController::class, 'thongtin');
+$router->addRoute('/process_comment', CommentController::class, 'ktra');
+
 $router->addRoute('/about', AboutController::class, 'index');
 $router->addRoute('/home', HomeController::class, 'index');
 $router->addRoute('/login', LoginController::class, 'index');

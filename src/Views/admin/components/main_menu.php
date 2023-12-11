@@ -9,7 +9,7 @@
                                             <span class="pcoded-micon">
                                                 <i class="feather icon-home"></i>
                                             </span>
-                                            <span class="pcoded-mtext">Dashboard</span>
+                                            <span class="pcoded-mtext">Thống Kê</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -55,7 +55,9 @@
                                                 <i class="feather icon-home"></i>
                                             </span>
                                             <span class="pcoded-mtext">Quản lý Bình Luận</span>
-
+                                         </a>
+                                    </li>
+                                </ul>
                                 <ul class="pcoded-item pcoded-left-item">
                                     <li class>
                                         <a href="/admin/bills" class="waves-effect waves-dark">
