@@ -18,7 +18,7 @@
 
         <div class="reservation position-relative  ">
             <div class="row align-items-center ">
-                <div class="col-lg-6 my-5 my-lg-0 ">
+                <div class="col-sm-5 my-5 my-lg-0 ">
                     <div class="p-5">
                         <div class="mb-4">
                             <h1 class="display-3 text-primary" name="name">
@@ -34,10 +34,12 @@
                         <button data-id="<?= $detailProduct['id'] ?>" class="btn btn-primary" onclick="addToCart(<?= $detailProduct['id'] ?>,'<?= $detailProduct['name'] ?>',<?= $detailProduct['price'] ?>,'<?= $detailProduct['img'] ?>')">Add to Cart</button>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="">
+                <div class="col-sm-5 ">
+                    <div class="" style="background: rgba(51, 33, 29, .8);">
                         <img src="<?= $detailProduct['img'] ?>" alt="">
                     </div>
+
+
                 </div>
             </div>
         </div>

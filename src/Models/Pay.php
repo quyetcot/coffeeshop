@@ -5,12 +5,11 @@ namespace Ductong\BaseMvc\Models;
 use Ductong\BaseMvc\Model;
 
 class Pay extends Model {
-    protected $table = 'bills';
+    protected $table = 'order_details';
     protected $columns = [
-        'name',
-        'phone',
-        'address',
-        'sum_price',
-        'pttt'
+        'order_id',	
+        'product_id',	
+        'quantity',	
+        'price',	
     ];
 }

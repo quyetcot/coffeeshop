@@ -7,13 +7,13 @@ use Ductong\BaseMvc\Model;
 {
     protected $table = 'users';
 
-    public function login($name, $password)
+    public function login($user_name, $password)
     {
-        $sql = "SELECT * FROM {$this->table} WHERE name = :name AND password = :password LIMIT 1";
+        $sql = "SELECT * FROM {$this->table} WHERE user_name = :user_name AND password = :password LIMIT 1";
 
         $stmt = $this->conn->prepare($sql);
 
-        $stmt->bindParam(':name', $name);
+        $stmt->bindParam(':user_name', $user_name);
         $stmt->bindParam(':password', $password);
 
         $stmt->execute();

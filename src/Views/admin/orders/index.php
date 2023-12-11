@@ -44,24 +44,34 @@
                                                     <th>Phone</th>
                                                     <th>Address</th>
                                                     <th>Tổng giá tiền</th>
-                                                    <th>Phương thức thanh toán</th>
+                                                    <th>Trạng thái đơn hàng</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
 
                                             <tbody>
-                                                <?php foreach ($bills as $bill) : ?>
+                                                <?php foreach ($orders as $order) : ?>
                                                     <tr>
-                                                        <td><?= $bill['id'] ?></td>
-                                                        <td><?= $bill['name'] ?></td>
-                                                        <td><?= $bill['phone'] ?></td>
-                                                        <td><?= $bill['address'] ?></td>
-                                                        <td><?= $bill['sum_price'] ?>$</td>
-                                                        <td><?= $bill['pttt'] ?></td>
+                                                        <td><?= $order['id'] ?></td>
+                                                        <td><?= $order['name'] ?></td>
+                                                        <td><?= $order['phone'] ?></td>
+                                                        <td><?= $order['address'] ?></td>
+                                                        <td><?= $order['total_price'] ?>$</td>
+                                                        <td><?php if($order['status'] == 0 ){
+                                                            echo "Chờ duyệt";
+                                                        }
+                                                        
+                                                        if($order['status'] == 1 ){
+                                                            echo "Đã duyệt";
+                                                        }
+                                                        
+                                                        if($order['status'] == 2 ){
+                                                            echo "Thanh toán thành công";
+                                                        }?></td>
                                                         <td>
-                                                            <a href="" class="btn btn-primary btn-sm">Xác nhận</a>
+                                                            <a href="/admin/orders/update" name class="btn btn-primary btn-sm">Cập nhật</a>
 
-                                                            <form action="/admin/users/delete?id=<?= $bill['id'] ?>" method="post">
+                                                            <form action="" method="post">
                                                                 <button type="submit" onclick="return confirm('Bạn có chắc chắn xóa?');" class="btn btn-danger btn-sm mt-2">Xóa</button>
                                                             </form>
                                                         </td>

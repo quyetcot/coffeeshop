@@ -18,11 +18,11 @@ class LoginController extends Controller
 
         // Kiểm tra xem người dùng đã nhấn nút Đăng nhập hay chưa
         if (isset($_POST['btn-login'])) {
-            $name = $_POST['name'];
+            $user_name = $_POST['user_name'];
             $password = $_POST['password'];
 
             // Xác thực đăng nhập sử dụng UserModel
-            $user = $login->login($name, $password);
+            $user = $login->login($user_name, $password);
 
             if ($user) {
                 // Đăng nhập thành công, lưu trạng thái đăng nhập vào session

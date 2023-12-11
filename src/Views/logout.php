@@ -1,3 +1,4 @@
 <?php
-    header("Location: /");
+echo "Đăng xuất thành công!";
+header('Location:/');
 ?>

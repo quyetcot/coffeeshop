@@ -21,7 +21,7 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tài khoản</a>
                         <div class="dropdown-menu text-capitalize">
-                            <a href="/" class="dropdown-item">Đăng xuất</a>
+                            <a href="/logout" class="dropdown-item">Đăng xuất</a>
                             <a href="" class="dropdown-item">Thông tin</a>
                             
                         </div>

@@ -58,7 +58,7 @@
 
                                 <ul class="pcoded-item pcoded-left-item">
                                     <li class>
-                                        <a href="/admin/bills" class="waves-effect waves-dark">
+                                        <a href="/admin/orders" class="waves-effect waves-dark">
                                             <span class="pcoded-micon">
                                                 <i class="feather icon-home"></i>
                                             </span>

@@ -43,24 +43,29 @@
 <div class="container-fluid pt-5">
     <div class="container">
         <form action="" method="post" onsubmit="return validateForm()">
-            <label for="name">Name</label>
+       
+            <label for="name">Họ và Tên</label>
             <input type="text" name="name" class="form-control" required>
 
             <label for="email" class="mt-3">Email</label>
             <input type="email" name="email" class="form-control" required>
 
-            <label for="address" class="mt-3">Address</label>
+            <label for="address" class="mt-3">Địa chỉ</label>
             <input type="text" name="address" class="form-control" required>
 
-            <label for="password" class="mt-3">Password</label>
+            <label for="name">Tên đăng nhập</label>
+            <input type="text" name="user_name" class="form-control" required>
+
+
+            <label for="password" class="mt-3">Mật khẩu</label>
             <input type="password" name="password" class="form-control" required>
 
-            <label for="confirm_password" class="mt-3">Confirm Password</label>
+            <label for="confirm_password" class="mt-3">Xác nhận mật khẩu</label>
             <input type="password" name="confirm_password" class="form-control" required>
 
-            <button type="submit" name="btn-submit" class="btn btn-info mt-3">Xác nhận</button>
+            <button type="submit" name="btn-submit" class="btn btn-info mt-3">Đăng kí</button>
 
-            <a href="/" class="btn btn-primary mt-3">Đăng nhập</a>
+            <a href="/login" class="btn btn-primary mt-3">Đăng nhập</a>
 
         </form>
     </div>
