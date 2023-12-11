@@ -360,6 +360,15 @@
                     </div>
                 </div>
             </div>
+            <div class="">
+            <div>
+
+                <a href="https://www.messenger.com/t/huy.tong.tai.10">
+                <img src="https://cdns.diongame.com/static/messenger-01.svg">
+                </a>
+
+            </div>
+            </div>
         </div>
     </div>
     <div class="container-fluid text-center text-white border-top mt-4 py-4 px-sm-3 px-md-5" style="border-color: rgba(256, 256, 256, .1) !important;">
