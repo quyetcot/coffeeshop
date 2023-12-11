@@ -7,7 +7,9 @@ use Ductong\BaseMvc\Models\Category;
 use Ductong\BaseMvc\Models\Product;
 
 class MenuController extends Controller
-{
+{  public function __construct() {
+    check_auth();
+}
 
     
         public function index() {
@@ -36,5 +38,17 @@ class MenuController extends Controller
             ]);
         }
 
+        public function thongtin()
+        {
+            $user = array('name' => '', 'phone' => '', 'address' => '');
+        
+            if (isset($_SESSION['user'])) {
+               
+                $user = $_SESSION['user'];
+            }
+
+            return $user;
+        }
+        
     }
 

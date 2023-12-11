@@ -81,7 +81,6 @@
                             </div>
                             <div class="col-8 col-sm-9">
                                 <h4><?= $product['name'] ?></h4>
-                                <p class="m-0"><?= $product['description'] ?></p>
                             </div>
                         </div>
                     </a>
@@ -360,6 +359,11 @@
                         <button class="btn btn-primary font-weight-bold px-3">Sign Up</button>
                     </div>
                 </div>
+            </div>
+            <div class="">
+                <a href="https://www.messenger.com/t/huy.tong.tai.10">
+                <img src="https://cdns.diongame.com/static/messenger-01.svg">
+                </a>
             </div>
         </div>
     </div>

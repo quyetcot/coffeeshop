@@ -22,6 +22,7 @@ use Ductong\BaseMvc\Router;
 $router = new Router();
 
 $router->addRoute('/', IndexController::class, 'index');
+<<<<<<< HEAD
 
 //cart
 $router->addRoute('/pay', PayController::class, 'index');
@@ -31,17 +32,25 @@ $router->addRoute('/removeFromCart', CartController::class, 'removeFromCart');
 $router->addRoute('/incrementQuantity', CartController::class, 'incrementQuantity');
 $router->addRoute('/decrementQuantity', CartController::class, 'decrementQuantity');
 
+=======
+//bình luận
+>>>>>>> 62248ea8a8bff16dcf2dde454850cc8bf9267ac1
 $router->addRoute('/admin/comments', CommentController::class, 'index');
 $router->addRoute('/admin/comments/create', CommentController::class, 'create');
 $router->addRoute('/admin/comments/update', CommentController::class, 'update');
 $router->addRoute('/admin/comments/delete', CommentController::class, 'delete');
-
+$router->addRoute('/ktra', CommentController::class, 'ktra');
+//view
 $router->addRoute('/detail_product', DetailProductController::class, 'index');
 $router->addRoute('/menu', MenuController::class, 'index');
+$router->addRoute('/thongtin', MenuController::class, 'thongtin');
+$router->addRoute('/process_comment', CommentController::class, 'ktra');
+
 $router->addRoute('/about', AboutController::class, 'index');
 $router->addRoute('/home', HomeController::class, 'index');
 $router->addRoute('/service', ServiceController::class, 'index');
 $router->addRoute('/contact', ContactController::class, 'index');
+<<<<<<< HEAD
 
 $router->addRoute('/login', LoginController::class, 'index');
 $router->addRoute('/logout', LogoutController::class, 'index');
@@ -54,6 +63,12 @@ $router->addRoute('/admin/orders', CartController::class, 'show_order');
 $router->addRoute('/admin/orders/update', CartController::class, 'update');
 
 
+=======
+//admin
+$router->addRoute('/admin/dashboard', DashboardController::class, 'index');
+
+$router->addRoute('/admin/bills', PayController::class, 'index');
+>>>>>>> 62248ea8a8bff16dcf2dde454850cc8bf9267ac1
 $router->addRoute('/admin/users', UserController::class, 'index');
 $router->addRoute('/admin/users/create', UserController::class, 'create');
 $router->addRoute('/admin/users/update', UserController::class, 'update');

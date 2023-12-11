@@ -11,6 +11,7 @@ use Ductong\BaseMvc\Models\Product;
 
 class CartController extends Controller
 {
+<<<<<<< HEAD
     function index()
     {
 
@@ -23,6 +24,25 @@ class CartController extends Controller
 
         if (!empty($id)) {
             unset($_SESSION['cart'][$id]);
+=======
+    public function __construct() {
+        check_auth();
+    }
+    function index(){
+        if (!empty($_SESSION['cart'])) {
+            $cart = $_SESSION['cart'];
+          
+            // Tạo mảng chứa ID các sản phẩm trong giỏ hàng
+            // $productId = array_column($cart, 'id');
+            
+            // Chuyển đôi mảng id thành một cuỗi để thực hiện truy vấn
+            // $idList = implode(',', $productId);
+            
+            // Lấy sản phẩm trong bảng sản phẩm theo id
+            // $dataDb = (new Cart())->loadone_sanphamCart($idList);
+            // var_dump(   $_SESSION['cart'] );
+        
+>>>>>>> 62248ea8a8bff16dcf2dde454850cc8bf9267ac1
         }
 
         header('Location: /cart');

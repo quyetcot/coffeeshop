@@ -12,7 +12,6 @@ use Ductong\BaseMvc\Models\User;
 class DetailProductController extends Controller
 {
 
-
     public function index()
     {
         $products = (new Product())->all();
@@ -42,4 +41,31 @@ class DetailProductController extends Controller
             ]
         );
     }
+    public function create(){
+            $products = (new Product())->all();
+            $users = (new User())->all();
+            $arrayUserIdName = [];
+            foreach ($users as $user) {
+                $arrayUserIdName[$user['id']] = $user['name'];   
+            }
+            if (isset($_POST["btn-submit"])) { 
+                $data = [
+                    'id_user' =>  $_POST['id_user'],
+                    'id_product' =>  $_POST['id_product'],
+                    'content' => $_POST['content'],
+                    'date' => $_POST['date'],
+                ];
+    
+                (new Comment())->insert($data);
+    
+                header('Location: /detail_product');
+            }
+            $this->renderAdmin("comments/create", 
+            ["products"=> $products ,"users"=> $users, "arrayUserIdName" => $arrayUserIdName,]);
+    }
+
+    
 }
+
+
+
