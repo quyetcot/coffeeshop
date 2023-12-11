@@ -78,6 +78,26 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col-md-4 col-xl-4">
+                            <div class="card comp-card">
+                                <div class="card-body">
+                                    <div class="row align-items-center">
+                                        <div class="col">
+                                            <h6 class="m-b-25">Tổng doanh thu</h6>
+                                            <h3 class="f-w-700 text-c-yellow">
+                                                <?= $totalSale; ?> $
+                                            </h3>
+                                            <p class="m-b-0">As of
+                                                <?= date('M d, Y'); ?>
+                                            </p>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-hand-paper bg-c-yellow"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
                 </div>

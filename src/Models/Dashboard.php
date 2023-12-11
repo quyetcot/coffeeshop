@@ -62,5 +62,16 @@ class Dashboard extends Model
 
         return $totalBill;
     }
+    public function getTotalSale(){
+        $sql = "SELECT SUM(sum_price) AS totalSale FROM bills";
+        $stmt = $this->conn->prepare($sql);
+    $stmt->execute();
+
+    $result = $stmt->fetch(\PDO::FETCH_ASSOC);
+    $totalSale = $result['totalSale'];
+
+    return $totalSale;
+    
+    }
 
 }

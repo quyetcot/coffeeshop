@@ -361,13 +361,9 @@
                 </div>
             </div>
             <div class="">
-            <div>
-
                 <a href="https://www.messenger.com/t/huy.tong.tai.10">
                 <img src="https://cdns.diongame.com/static/messenger-01.svg">
                 </a>
-
-            </div>
             </div>
         </div>
     </div>
