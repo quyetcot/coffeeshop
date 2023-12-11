@@ -97,16 +97,19 @@ class CartController extends Controller
         $this->renderAdmin('orders/index', ['orders' => $orders]);
     }
     public function update() {
+        $order = (new Cart)->findOne($_GET['id']);
         if (isset($_POST['btn-submit'])) { 
             $data = [
                 'name' => $_POST['name'],
                 'phone' => $_POST['phone'],
                 'address' => $_POST['address'],
                 'email' => $_POST['email'],
-                'total_price' => $_POST['total_price'],
-                'status' => $_POST['tatus'],
+                'status' => $_POST['status'],
+                'total_price' => $order['total_price'],
+                'created_at'=>date('Y-m-d', time())
             ];
-
+            //  print_r($data) ;
+            //  die;
             $conditions = [
                 ['id', '=', $_GET['id']]
             ];
@@ -114,8 +117,8 @@ class CartController extends Controller
             (new Cart)->update($data, $conditions);
         }
 
-        $order = (new Cart)->findOne($_GET['id']);
-
+        
+    
         $this->renderAdmin('orders/update', ['order' => $order]);
     }
 }

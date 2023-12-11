@@ -27,18 +27,29 @@ class DetailProductController extends Controller
         foreach ($categories as $category) {
             $arrayCategoryIdName[$category['id']] = $category['name'];
         }
-        $productId = $_GET['id']; 
+        $productId = $_GET['id'];
         $detailProduct = (new Product())->detailProduct($productId);
+        if (isset($_POST["btn-submit"])) {
+            $data = [
+                'id_user' =>  $_POST['id_user'],
+                'id_product' =>  $_POST['id_product'],
+                'content' => $_POST['content'],
+                'date' => date('Y-m-d', time()),
+            ];
 
+            (new Comment())->insert($data);
+
+         
+        }
         $this->renderClient(
             "detail_product",
             [
                 "products" => $products,
-                "comments"=> $comments,
+                "comments" => $comments,
                 "arrayCategoryIdName" => $arrayCategoryIdName,
                 "detailProduct" => $detailProduct,
-                'categories'=>$categories,
-                'users'=>$users 
+                'categories' => $categories,
+                'users' => $users
             ]
         );
     }

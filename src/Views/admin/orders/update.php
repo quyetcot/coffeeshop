@@ -43,16 +43,23 @@
                                             <input type="text" required name="email" class="form-control" value="<?= $order['email'] ?>">
 
                                             <label for="phone">Phone</label>
-                                            <input type="tel" required name="phone" class="form-control">
+                                            <input type="tel" required name="phone" class="form-control" value="<?= $order['phone'] ?>">
 
                                             <label for="address">Address</label>
                                             <input type="text" required name="address" class="form-control" value="<?= $order['address'] ?>">
-            
 
-                                           
+                                            <label for="status">Trang thái đơn hàng</label>
+                                            <select name="status" value="<?=$order['status']?>" id="" class="form-control">
+                                                <option value="0">Chờ duyệt</option>
+                                                <option value="1">Đã duyệt</option>
+                                                <option value="2">Thanh toán thành công</option>
+                                                <option value="4">Đã giao hàng</option>
+                                                <option value="3">Đã hủy</option>
+                                            </select>
 
-                                            <button type="submit" name="btn-submit" class="btn btn-info mt-3">Submit</button>
-                                            <a href="/admin/products" class="btn btn-primary mt-3">Quay lại d/s</a>
+                                            <button  type="submit" name="btn-submit" class="btn btn-info mt-3">Submit</button>
+                                            <a href="/admin/orders" class="btn btn-primary mt-3">Quay lại d/s</a>
+                                          
                                     </form>
                                 </div>
                             </div>

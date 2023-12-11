@@ -69,7 +69,7 @@
                                                             echo "Thanh toán thành công";
                                                         }?></td>
                                                         <td>
-                                                            <a href="/admin/orders/update" name class="btn btn-primary btn-sm">Cập nhật</a>
+                                                            <a href="/admin/orders/update?id=<?=$order['id']?>" name class="btn btn-primary btn-sm">Cập nhật</a>
 
                                                             <form action="" method="post">
                                                                 <button type="submit" onclick="return confirm('Bạn có chắc chắn xóa?');" class="btn btn-danger btn-sm mt-2">Xóa</button>
