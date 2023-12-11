@@ -36,7 +36,7 @@
                 </div>
                 <div class="col-sm-5 ">
                     <div class="" style="background: rgba(51, 33, 29, .8);">
-                        <img src="<?= $detailProduct['img'] ?>" alt="">
+                        <img src="<?= $detailProduct['img'] ?>" alt="" style="max-width: 700px; text-align: center;">
                     </div>
 
 
@@ -68,15 +68,26 @@
 
                 <div>
                     <h2>Bình luận</h2>
+                   
+                    <form  action="" method="post" >
+                        <input type="hidden" name="id_user" value="<?=$_SESSION['user']['id']?>" >
+                        <input type="hidden" name="id_product" value="<?=$detailProduct['id']?>" >
+                       <input type="text" name="content" class="form-control mb-2 ">
+                       <input type="submit" name="btn-submit" class="btn btn-primary" >
+                    </form>
+                    <h2 class="mt-3" >Đánh giá sản phẩm</h2>
                     <?php foreach ($comments as $comment) : ?>
                         <?php foreach ($users as $user) : ?>
                             <?php if ($comment['id_user'] == $user['id'] && $comment['id_product'] == $detailProduct['id']) : ?>
-                                <div class="usercm">
-                                    <?= $user['name'] ?>
+                              <div class="mt-3" >
+                           
+                              <div class="usercm">
+                                  <h5>  <?= $user['name'] ?></h5>
                                 </div>
                                 <div class="cm">
-                                    <?= $comment['content'] ?>
+                                    <p><?= $comment['content'] ?></p>
                                 </div>
+                              </div>
                             <?php endif; ?>
                         <?php endforeach; ?>
                     <?php endforeach; ?>
