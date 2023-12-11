@@ -46,12 +46,12 @@
                     <a href="/detail_product?id=<?= $product['p_id'] ?>" class="btn btn_primary">
                     <div class="row align-items-center mb-5">
                         <div class="col-4 col-sm-3">
-                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="<?= $product['p_img'] ?>" alt="" >
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="<?= $product['p_img'] ?>" alt="">
                             <h5 class="menu-price">$<?= $product['p_price_sale'] ?></h5>
                         </div>
                         <div class="col-8 col-sm-9">
                             <h4><?= $product['p_name'] ?></h4>
-                            
+                            <p class="m-0"><?= $product['p_description'] ?></p>
                         </div>
                     </div>
                     </a>

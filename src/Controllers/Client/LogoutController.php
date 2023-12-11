@@ -7,15 +7,10 @@ use Ductong\BaseMvc\Models\User;
 
 class LogoutController extends Controller
 {
-<<<<<<< HEAD
     public function __construct() {
         check_auth();
     }
 
-=======
-    
-   
->>>>>>> 62248ea8a8bff16dcf2dde454850cc8bf9267ac1
     /*
         Đây là hàm hiển thị danh sách user
     */
