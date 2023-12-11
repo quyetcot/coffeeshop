@@ -34,7 +34,7 @@ if (isset($_SESSION['user'])) {
                             <h1 class="display-3 text-primary" name="name">
                                 <?php echo $detailProduct['name']; ?>
                             </h1>
-                            <h1 class="text-white" name="price"> $
+                            <h1 class="text-white" name="price">$
                                 <?= $detailProduct['price']; ?>
                             </h1>
                         </div>
