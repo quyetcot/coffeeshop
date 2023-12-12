@@ -33,6 +33,7 @@ class UserController extends Controller
         }
 
         $this->renderAdmin('users/create');
+     
     }
 
     public function update() {
@@ -57,6 +58,30 @@ class UserController extends Controller
 
         $this->renderAdmin('users/update', ['user' => $user]);
     }
+
+    public function update_info() {
+        if (isset($_POST['btn-submit'])) { 
+            $data = [
+                'name' => $_POST['name'],
+                'phone' => $_POST['phone'],
+                'address' => $_POST['address'],
+                'email' => $_POST['email'],
+                'password' => $_POST['password'],
+                'confirm_password' => $_POST['confirm_password'],
+            ];
+
+            $conditions = [
+                ['id', '=', $_GET['id']]
+            ];
+
+            (new User)->update($data, $conditions);
+        }
+
+        $user = (new User)->findOne($_GET['id']);
+
+        $this ->renderClient('info',['user' => $user]);
+    }
+
 
     public function delete() {
         $conditions = [

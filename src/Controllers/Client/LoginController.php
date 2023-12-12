@@ -23,15 +23,26 @@ class LoginController extends Controller
 
             // Xác thực đăng nhập sử dụng UserModel
             $user = $login->login($user_name, $password);
-
+           
             if ($user) {
-                // Đăng nhập thành công, lưu trạng thái đăng nhập vào session
-                $_SESSION['logged_in'] = true;
-                $_SESSION['user'] = $user;
-
-                // Chuyển hướng người dùng đến trang chính
-                header('Location: /home');
-                exit();
+                // Kiểm tra nếu tên đăng nhập là "admin" và mật khẩu là "một"
+                if ($user_name === 'admin' && $password === '1') {
+                    // Đăng nhập thành công với tài khoản admin
+                    $_SESSION['logged_in'] = true;
+                    $_SESSION['user'] = $user;
+    
+                    // Chuyển hướng người dùng đến trang admin/dashboard
+                    header('Location: /admin/dashboard');
+                    exit();
+                } else {
+                    // Đăng nhập thành công với tài khoản người dùng khác
+                    $_SESSION['logged_in'] = true;
+                    $_SESSION['user'] = $user;
+    
+                    // Chuyển hướng người dùng đến trang chính
+                    header('Location: /home');
+                    exit();
+                }
             } else {
                 // Đăng nhập không thành công, hiển thị thông báo lỗi
                 echo "Email hoặc mật khẩu không chính xác.";

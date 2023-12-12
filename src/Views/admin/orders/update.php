@@ -49,7 +49,7 @@
                                             <input type="text" required name="address" class="form-control" value="<?= $order['address'] ?>">
 
                                             <label for="status">Trang thái đơn hàng</label>
-                                            <select name="status" value="<?=$order['status']?>" id="" class="form-control">
+                                            <select name="status" id="" class="form-control">
                                                 <option value="0">Chờ duyệt</option>
                                                 <option value="1">Đã duyệt</option>
                                                 <option value="2">Thanh toán thành công</option>

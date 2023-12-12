@@ -46,6 +46,7 @@
                                                     <th>Phone</th>
                                                     <th>Email</th>
                                                     <th>Address</th>
+                                                    <th>User Name</th>
                                                     <th>Password</th>
                                                     <th>Confirm_password</th>
                                                     <th>Action</th>
@@ -60,6 +61,7 @@
                                                         <td><?= $user['phone'] ?></td>
                                                         <td><?= $user['email'] ?></td>
                                                         <td><?= $user['address'] ?></td>
+                                                        <td><?= $user['user_name'] ?></td>
                                                         <td><?= $user['password'] ?></td>
                                                         <td><?= $user['confirm_password'] ?></td>
                                                         
