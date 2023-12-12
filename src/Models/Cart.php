@@ -15,5 +15,6 @@ class Cart extends Model
         'total_price',
         'status',
         'created_at',
+        'pttt'
     ];
 }

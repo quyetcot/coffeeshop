@@ -110,6 +110,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btn-submit'])) {
 
                 <label for="address">Address</label>
                 <input type="text" required name="address" class="form-control" value="<?=$user['address']?>">
+                <label for="pttt">Phương thức thanh toán</label><br>
+                <input type="radio" name="pttt" id="" value="chuyển khoản" > Chuyển khoản <br>
+                <input type="radio" name="pttt" id="" value="tiền mặt" > Tiền mặt <br>
 
                 <button type="submit" class="btn btn-primary mt-3" onclick="ValidateForm()">Đặt hàng</button>
             </form>
