@@ -32,7 +32,7 @@
                         <div class="col-sm-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h5>Danh sách Product</h5>
+                                    <h5>Danh sách Sản Phẩm</h5>
 
                                     <a href="/admin/products/create" class="btn btn-info btn-sm">Tạo mới</a>
                                 </div>

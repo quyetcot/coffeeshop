@@ -22,7 +22,7 @@
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tài khoản</a>
                         <div class="dropdown-menu text-capitalize">
                             <a href="/logout" class="dropdown-item">Đăng xuất</a>
-                            <a href="" class="dropdown-item">Thông tin</a>
+                            <a href="/info?id=<?=$_SESSION['user']['id']?>" class="dropdown-item">Thông tin</a>
                             
                         </div>
                     </div>

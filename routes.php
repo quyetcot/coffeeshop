@@ -47,12 +47,14 @@ $router->addRoute('/login', LoginController::class, 'index');
 $router->addRoute('/logout', LogoutController::class, 'index');
 $router->addRoute('/register', RegisterController::class, 'create');
 
+$router->addRoute('/info', UserController::class, 'update_info');
 
 $router->addRoute('/admin/dashboard', DashboardController::class, 'index');
 
 $router->addRoute('/admin/orders', CartController::class, 'show_order');
+$router->addRoute('/admin/orders_detail', CartController::class, 'show_order_detail');
 $router->addRoute('/admin/orders/update', CartController::class, 'update');
-
+$router->addRoute('/admin/orders/delete', CartController::class, 'delete');
 
 $router->addRoute('/admin/users', UserController::class, 'index');
 $router->addRoute('/admin/users/create', UserController::class, 'create');

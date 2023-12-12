@@ -121,4 +121,20 @@ class CartController extends Controller
     
         $this->renderAdmin('orders/update', ['order' => $order]);
     }
+
+    public function delete() {
+        $conditions = [
+            ['id', '=', $_GET['id']]
+        ];
+
+        (new Cart)->delete($conditions);
+
+        header('Location: /admin/orders');
+    }
+
+    public function show_order_detail(){
+        $order_detail = (new Pay)->all();
+
+        $this->renderAdmin('orders_detail/index', ['orders_detail' => $order_detail]);
+    }
 }
