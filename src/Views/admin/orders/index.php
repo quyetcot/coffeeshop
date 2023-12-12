@@ -45,6 +45,7 @@
                                                     <th>Address</th>
                                                     <th>Tổng giá tiền</th>
                                                     <th>Trạng thái đơn hàng</th>
+                                                    <th>Phương thức thanh toán</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
@@ -68,6 +69,7 @@
                                                         if($order['status'] == 2 ){
                                                             echo "Thanh toán thành công";
                                                         }?></td>
+                                                          <td><?= $order['pttt'] ?></td>
                                                         <td>
                                                             <a href="/admin/orders/update?id=<?=$order['id']?>" name class="btn btn-primary btn-sm">Cập nhật</a>
 

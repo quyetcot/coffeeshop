@@ -65,6 +65,7 @@ class CartController extends Controller
                 'email' => $_POST['email'],
                 'phone' => $_POST['phone'],
                 'address' => $_POST['address'],
+                'pttt'=> $_POST['pttt'],
                 'total_price' => $sum,
                 'status' => STATUS_PENDING,
                 'created_at' => date('Y-m-d', time()),
@@ -105,6 +106,7 @@ class CartController extends Controller
                 'address' => $_POST['address'],
                 'email' => $_POST['email'],
                 'status' => $_POST['status'],
+                'pttt'=> $_POST['pttt'],
                 'total_price' => $order['total_price'],
                 'created_at'=>date('Y-m-d', time())
             ];
